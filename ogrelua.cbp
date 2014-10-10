@@ -15,12 +15,9 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-Wall" />
-					<Add option="-DBUILD_DLL" />
 					<Add option="-g" />
+					<Add option="-DBUILD_DLL" />
 				</Compiler>
-				<Linker>
-					<Add library="user32" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/ogrelua" prefix_auto="1" extension_auto="1" />
@@ -36,7 +33,6 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="user32" />
 				</Linker>
 			</Target>
 		</Build>

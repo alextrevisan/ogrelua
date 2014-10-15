@@ -53,7 +53,14 @@ public:
 	{
 	    if(FrameRenderingQueued==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameRenderingQueued);
-        if(lua_pcall(mL,0,1,0)!=0)
+        lua_newtable(mL);
+        lua_pushstring(mL, "timeSinceLastFrame");
+        lua_pushnumber(mL, evt.timeSinceLastFrame);
+        lua_settable(mL, -3);
+        lua_pushstring(mL, "timeSinceLastEvent");
+        lua_pushnumber(mL, evt.timeSinceLastEvent);
+        lua_settable(mL, -3);
+        if(lua_pcall(mL,1,1,0)!=0)
         {
             printf("error running function: %s\n",lua_tostring(mL, -1));
             return false;
@@ -67,7 +74,16 @@ public:
 	{
 	    if(FrameStarted==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameStarted);
-        if(lua_pcall(mL,0,1,0)!=0)
+
+        lua_newtable(mL);
+        lua_pushstring(mL, "timeSinceLastFrame");
+        lua_pushnumber(mL, evt.timeSinceLastFrame);
+        lua_settable(mL, -3);
+        lua_pushstring(mL, "timeSinceLastEvent");
+        lua_pushnumber(mL, evt.timeSinceLastEvent);
+        lua_settable(mL, -3);
+
+        if(lua_pcall(mL,1,1,0)!=0)
         {
             printf("error running function: %s\n",lua_tostring(mL, -1));
             return false;
@@ -81,7 +97,14 @@ public:
 	{
 	    if(FrameEnded==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameEnded);
-        if(lua_pcall(mL,0,1,0)!=0)
+        lua_newtable(mL);
+        lua_pushstring(mL, "timeSinceLastFrame");
+        lua_pushnumber(mL, evt.timeSinceLastFrame);
+        lua_settable(mL, -3);
+        lua_pushstring(mL, "timeSinceLastEvent");
+        lua_pushnumber(mL, evt.timeSinceLastEvent);
+        lua_settable(mL, -3);
+        if(lua_pcall(mL,1,1,0)!=0)
         {
             printf("error running function: %s\n",lua_tostring(mL, -1));
             return false;

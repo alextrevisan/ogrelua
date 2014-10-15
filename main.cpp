@@ -42,6 +42,15 @@ public:
     }
 };
 
+class WindowEventUtilities
+{
+    public:
+    WindowEventUtilities(){}
+    void messagePump()
+    {
+        Ogre::WindowEventUtilities::messagePump();
+    }
+};
 
 LUALIB_API int luaopen_ogrelua(lua_State *L)
 {
@@ -63,20 +72,12 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .deriveClass<FrameListener, Ogre::FrameListener>("FrameListener")
                 .addConstructor<void(*)(void)>()
                 .addFunction("setFrameStarted",&FrameListener::setFrameStarted)
-                .addFunction("setFrameStarted",&FrameListener::setFrameRenderingQueued)
-                .addFunction("setFrameStarted",&FrameListener::setFrameEnded)
-            .endClass()
-
-            .beginClass<Ogre::FrameEvent>("FrameEvent")
-                .addData("timeSinceLastFrame",&Ogre::FrameEvent::timeSinceLastFrame)
-                .addData("timeSinceLastEvent",&Ogre::FrameEvent::timeSinceLastEvent)
+                .addFunction("setFrameRenderingQueued",&FrameListener::setFrameRenderingQueued)
+                .addFunction("setFrameRenderingQueued",&FrameListener::setFrameRenderingQueued)
             .endClass()
 
             .beginClass<Ogre::Degree>("Degree")
                 .addConstructor<void(*)(Ogre::Real)>()
-                //.addFunction("set",(Ogre::Degree&(Ogre::Degree::*)(const Ogre::Real&))&Ogre::Degree::operator=)
-                //.addFunction("set",(Ogre::Degree&(Ogre::Degree::*)(const Ogre::Degree&))&Ogre::Degree::operator=)
-                //.addFunction("set",(Ogre::Degree&(Ogre::Degree::*)(const Ogre::Radian&))&Ogre::Degree::operator=)
             .endClass()
 
             .beginClass<Ogre::Radian>("Radian")
@@ -100,13 +101,15 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
 
             .deriveClass<Ogre::Entity, Ogre::MovableObject>("Entity")
             .endClass()
+            .beginClass<Ogre::Node>("Node")
+            .endClass()
 
-            .beginClass<Ogre::SceneNode>("SceneNode")
+            .deriveClass<Ogre::SceneNode, Ogre::Node>("SceneNode")
                 .addFunction("attachObject",&Ogre::SceneNode::attachObject)
                 .addFunction("yaw",(void(Ogre::SceneNode::*)(const Ogre::Radian&,int))&Ogre::SceneNode::yaw)
                 .addFunction("setPosition",(void(Ogre::SceneNode::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::SceneNode::setPosition)
                 .addFunction("setScale",(void(Ogre::SceneNode::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::SceneNode::setScale)
-                .addFunction("getPosition",(Ogre::Vector3&(Ogre::SceneNode::*)(void))&Ogre::SceneNode::getPosition)
+                .addFunction("getPosition",(const Ogre::Vector3&(Ogre::SceneNode::*)(void))&Ogre::SceneNode::getPosition)
                 .addFunction("lookAt",(void(Ogre::SceneNode::*)(const Ogre::Vector3&,Ogre::SceneNode::TransformSpace, const Ogre::Vector3&))&Ogre::SceneNode::lookAt)
                 .addFunction("createChildSceneNode",(Ogre::SceneNode*(Ogre::SceneNode::*)(const Ogre::String&,const Ogre::Vector3&,const Ogre::Quaternion&))&Ogre::SceneNode::createChildSceneNode)
             .endClass()
@@ -115,9 +118,11 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
 
             .deriveClass<Ogre::Camera, Ogre::MovableObject>("Camera")
                 .addFunction("setPosition",(void(Ogre::Camera::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::Camera::setPosition)
-                .addFunction("lookAt",(void(Ogre::Camera::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::Camera::lookAt)
+                .addFunction("getPosition",(const Ogre::Vector3&(Ogre::Camera::*)(void))&Ogre::Camera::getPosition)
+                .addFunction("lookAt",(void(Ogre::Camera::*)(const Ogre::Vector3&))&Ogre::Camera::lookAt)
                 .addFunction("setNearClipDistance",(void(Ogre::Camera::*)(Ogre::Real))&Ogre::Camera::setNearClipDistance)
                 .addFunction("setFarClipDistance",(void(Ogre::Camera::*)(Ogre::Real))&Ogre::Camera::setFarClipDistance)
+                .addFunction("setAspectRatio",(void(Ogre::Camera::*)(Ogre::Real))&Ogre::Camera::setAspectRatio)
             .endClass()
 
             .beginClass<Ogre::ColourValue>("ColourValue")
@@ -125,7 +130,10 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .endClass()
 
             .beginClass<Ogre::Light>("Light")
-                .addFunction("setPosition",(void(Ogre::Light::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::Light::setPosition)
+                .addFunction("setPosition",(void(Ogre::Light::*)(const Ogre::Vector3&))&Ogre::Light::setPosition)
+                .addFunction("setDiffuseColour",(void(Ogre::Light::*)(const Ogre::ColourValue&))&Ogre::Light::setDiffuseColour)
+                .addFunction("setSpecularColour",(void(Ogre::Light::*)(const Ogre::ColourValue&))&Ogre::Light::setSpecularColour)
+                //.addFunction("setType",(void(Ogre::Light::*)(const Ogre::ColourValue&))&Ogre::Light::setType)
             .endClass()
 
             .beginClass<Ogre::SceneManager>("SceneManager")
@@ -133,12 +141,13 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("getRootSceneNode",&Ogre::SceneManager::getRootSceneNode)
                 .addFunction("createEntity",(Ogre::Entity*(Ogre::SceneManager::*)(const Ogre::String&,const Ogre::String&,const Ogre::String&))&Ogre::SceneManager::createEntity)
                 .addFunction("setAmbientLight",(void(Ogre::SceneManager::*)(Ogre::ColourValue*))&Ogre::SceneManager::setAmbientLight)
-                .addFunction("createLight",(Ogre::Light*(Ogre::SceneManager::*)(void))&Ogre::SceneManager::createLight)
                 .addFunction("createLight",(Ogre::Light*(Ogre::SceneManager::*)(const Ogre::String&))&Ogre::SceneManager::createLight)
             .endClass()
 
             .beginClass<Ogre::Viewport>("Viewport")
                 .addFunction("setBackgroundColour",(void(Ogre::Viewport::*)(Ogre::ColourValue*))&Ogre::Viewport::setBackgroundColour)
+                .addFunction("getActualWidth",(int(Ogre::Viewport::*)(void))&Ogre::Viewport::getActualWidth)
+                .addFunction("getActualHeight",(int(Ogre::Viewport::*)(void))&Ogre::Viewport::getActualHeight)
             .endClass()
 
             .beginClass<Ogre::RenderTarget>("RenderTarget")
@@ -165,9 +174,10 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("addResourceLocation",&ResourceGroupManager::addResourceLocation)
                 .addFunction("initialiseAllResourceGroups",&ResourceGroupManager::initialiseAllResourceGroups)
             .endClass()
-            //.beginClass<Ogre::WindowEventUtilities>("WindowEventUtilities")
-            //    .addFunction("messagePump",&Ogre::WindowEventUtilities::messagePump)
-            //.endClass()
+            .beginClass<WindowEventUtilities>("WindowEventUtilities")
+                .addConstructor<void(*)(void)>()
+                .addFunction("messagePump",(void(WindowEventUtilities::*)())&WindowEventUtilities::messagePump)
+            .endClass()
 
         .endNamespace();
     return 1;

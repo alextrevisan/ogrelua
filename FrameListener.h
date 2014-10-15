@@ -67,7 +67,9 @@ public:
         }
         else
         {
-            return lua_toboolean(mL, -1);
+            bool ret = lua_toboolean(mL, -1);
+            lua_pop(mL, 1);
+            return ret;
         }
 	}
 	bool frameStarted(const Ogre::FrameEvent& evt)
@@ -90,7 +92,9 @@ public:
         }
         else
         {
-            return lua_toboolean(mL, -1);
+            bool ret = lua_toboolean(mL, -1);
+            lua_pop(mL, 1);
+            return ret;
         }
 	}
 	bool frameEnded(const Ogre::FrameEvent& evt)
@@ -111,7 +115,9 @@ public:
         }
         else
         {
-            return lua_toboolean(mL, -1);
+            bool ret = lua_toboolean(mL, -1);
+            lua_pop(mL, 1);
+            return ret;
         }
 	}
 private:

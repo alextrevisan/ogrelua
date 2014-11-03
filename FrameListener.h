@@ -5,6 +5,7 @@ extern "C" {
     #include <lua.h>
     #include <lauxlib.h>
 }
+#include "LuaBridge/LuaBridge.h"
 
 #include <OgreFrameListener.h>
 
@@ -53,13 +54,9 @@ public:
 	{
 	    if(FrameRenderingQueued==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameRenderingQueued);
-        lua_newtable(mL);
-        lua_pushstring(mL, "timeSinceLastFrame");
-        lua_pushnumber(mL, evt.timeSinceLastFrame);
-        lua_settable(mL, -3);
-        lua_pushstring(mL, "timeSinceLastEvent");
-        lua_pushnumber(mL, evt.timeSinceLastEvent);
-        lua_settable(mL, -3);
+
+        luabridge::push(mL,evt);
+
         if(lua_pcall(mL,1,1,0)!=0)
         {
             printf("error running function: %s\n",lua_tostring(mL, -1));
@@ -77,13 +74,7 @@ public:
 	    if(FrameStarted==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameStarted);
 
-        lua_newtable(mL);
-        lua_pushstring(mL, "timeSinceLastFrame");
-        lua_pushnumber(mL, evt.timeSinceLastFrame);
-        lua_settable(mL, -3);
-        lua_pushstring(mL, "timeSinceLastEvent");
-        lua_pushnumber(mL, evt.timeSinceLastEvent);
-        lua_settable(mL, -3);
+        luabridge::push(mL,evt);
 
         if(lua_pcall(mL,1,1,0)!=0)
         {
@@ -101,13 +92,9 @@ public:
 	{
 	    if(FrameEnded==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameEnded);
-        lua_newtable(mL);
-        lua_pushstring(mL, "timeSinceLastFrame");
-        lua_pushnumber(mL, evt.timeSinceLastFrame);
-        lua_settable(mL, -3);
-        lua_pushstring(mL, "timeSinceLastEvent");
-        lua_pushnumber(mL, evt.timeSinceLastEvent);
-        lua_settable(mL, -3);
+
+        luabridge::push(mL,evt);
+
         if(lua_pcall(mL,1,1,0)!=0)
         {
             printf("error running function: %s\n",lua_tostring(mL, -1));

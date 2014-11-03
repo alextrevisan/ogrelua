@@ -18,7 +18,7 @@ extern "C"
 #define MYNAME "ogrelua " MAJOR "." MINOR "." PATCH
 #define MYVERSION MYNAME " library for " LUA_VERSION " / Oct 2014"
 
-
+// oh... this... hehehe....
 inline int* fromEnum(int value)
 {
     int * tmp = new int;
@@ -101,17 +101,52 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
 
             .deriveClass<Ogre::Entity, Ogre::MovableObject>("Entity")
             .endClass()
+
             .beginClass<Ogre::Node>("Node")
+            .endClass()
+
+
+            .beginClass<Ogre::VisibleObjectsBoundsInfo>("VisibleObjectsBoundsInfo")
+                .addConstructor<void(*)(void)>()
             .endClass()
 
             .deriveClass<Ogre::SceneNode, Ogre::Node>("SceneNode")
                 .addFunction("attachObject",&Ogre::SceneNode::attachObject)
+                .addFunction("numAttachedObjects",&Ogre::SceneNode::numAttachedObjects)
+                .addFunction("getAttachedObject",(Ogre::MovableObject*(Ogre::SceneNode::*)(unsigned short))&Ogre::SceneNode::getAttachedObject)
+                .addFunction("detachObject",(Ogre::MovableObject*(Ogre::SceneNode::*)(unsigned short))&Ogre::SceneNode::detachObject)
+                .addFunction("detachAllObjects",&Ogre::SceneNode::detachAllObjects)
+                .addFunction("isInSceneGraph",&Ogre::SceneNode::isInSceneGraph)
+                .addFunction("_notifyRootNode",&Ogre::SceneNode::_notifyRootNode)
+                .addFunction("_update",&Ogre::SceneNode::_update)
+                .addFunction("_updateBounds",&Ogre::SceneNode::_updateBounds)
+                .addFunction("_findVisibleObjects",&Ogre::SceneNode::_findVisibleObjects)
+                .addFunction("_getWorldAABB",&Ogre::SceneNode::_getWorldAABB)
+                .addFunction("getAttachedObjectIterator",(Ogre::SceneNode::ObjectIterator(Ogre::SceneNode::*)(void))&Ogre::SceneNode::getAttachedObjectIterator)
+                .addFunction("getCreator",&Ogre::SceneNode::getCreator)
+                .addFunction("removeAndDestroyChild",(void(Ogre::SceneNode::*)(unsigned short))&Ogre::SceneNode::removeAndDestroyChild)
+                .addFunction("removeAndDestroyAllChildren",&Ogre::SceneNode::removeAndDestroyAllChildren)
+                .addFunction("showBoundingBox",&Ogre::SceneNode::showBoundingBox)
+                .addFunction("hideBoundingBox",&Ogre::SceneNode::hideBoundingBox)
+                .addFunction("_addBoundingBoxToQueue",&Ogre::SceneNode::_addBoundingBoxToQueue)
+                .addFunction("getShowBoundingBox",&Ogre::SceneNode::getShowBoundingBox)
+                .addFunction("createChildSceneNode",(Ogre::SceneNode*(Ogre::SceneNode::*)(const Ogre::String&,const Ogre::Vector3&,const Ogre::Quaternion&))&Ogre::SceneNode::createChildSceneNode)
+                .addFunction("findLights",&Ogre::SceneNode::findLights)
+                .addFunction("setFixedYawAxis",&Ogre::SceneNode::setFixedYawAxis)
                 .addFunction("yaw",(void(Ogre::SceneNode::*)(const Ogre::Radian&,int))&Ogre::SceneNode::yaw)
+                .addFunction("setDirection",(void(Ogre::SceneNode::*)(const Ogre::Vector3&, Ogre::SceneNode::TransformSpace, const Ogre::Vector3&))&Ogre::SceneNode::setDirection)
+                .addFunction("lookAt",(void(Ogre::SceneNode::*)(const Ogre::Vector3&,Ogre::SceneNode::TransformSpace, const Ogre::Vector3&))&Ogre::SceneNode::lookAt)
+                .addFunction("setAutoTracking",&Ogre::SceneNode::setAutoTracking)
+                .addFunction("getAutoTrackTarget",&Ogre::SceneNode::getAutoTrackTarget)
+                .addFunction("getAutoTrackOffset",&Ogre::SceneNode::getAutoTrackOffset)
+                .addFunction("getAutoTrackLocalDirection",&Ogre::SceneNode::getAutoTrackLocalDirection)
+                .addFunction("getParentSceneNode",&Ogre::SceneNode::getParentSceneNode)
+                .addFunction("setVisible",&Ogre::SceneNode::setVisible)
+                .addFunction("flipVisibility",&Ogre::SceneNode::flipVisibility)
+                .addFunction("setDebugDisplayEnabled",&Ogre::SceneNode::setDebugDisplayEnabled)
                 .addFunction("setPosition",(void(Ogre::SceneNode::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::SceneNode::setPosition)
                 .addFunction("setScale",(void(Ogre::SceneNode::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::SceneNode::setScale)
                 .addFunction("getPosition",(const Ogre::Vector3&(Ogre::SceneNode::*)(void))&Ogre::SceneNode::getPosition)
-                .addFunction("lookAt",(void(Ogre::SceneNode::*)(const Ogre::Vector3&,Ogre::SceneNode::TransformSpace, const Ogre::Vector3&))&Ogre::SceneNode::lookAt)
-                .addFunction("createChildSceneNode",(Ogre::SceneNode*(Ogre::SceneNode::*)(const Ogre::String&,const Ogre::Vector3&,const Ogre::Quaternion&))&Ogre::SceneNode::createChildSceneNode)
             .endClass()
 
 
@@ -157,7 +192,10 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("addViewport",(Ogre::Viewport*(Ogre::RenderWindow::*)(Ogre::Camera*,int,float,float,float,float))&Ogre::RenderWindow::addViewport)
                 .addFunction("isClosed",&Ogre::RenderWindow::isClosed)
             .endClass()
-
+            .beginClass<Ogre::FrameEvent>("FrameEvent")
+                .addData("timeSinceLastEvent", &Ogre::FrameEvent::timeSinceLastEvent)
+                .addData("timeSinceLastFrame", &Ogre::FrameEvent::timeSinceLastFrame)
+            .endClass()
             .beginClass<Ogre::Root>("Root")
                 .addConstructor<void(Ogre::Root::*)(const Ogre::String&, const Ogre::String&, const Ogre::String&)>()
                 .addFunction("restoreConfig",&Ogre::Root::restoreConfig)

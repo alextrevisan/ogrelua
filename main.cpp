@@ -6,6 +6,8 @@ extern "C" {
 #include "LuaBridge/LuaBridge.h"
 
 #include <Ogre.h>
+#include <Terrain/OgreTerrain.h>
+#include <Terrain/OgreTerrainGroup.h>
 #include "FrameListener.h"
 
 extern "C"
@@ -19,11 +21,9 @@ extern "C"
 #define MYVERSION MYNAME " library for " LUA_VERSION " / Oct 2014"
 
 // oh... this... hehehe....
-inline int* fromEnum(int value)
+inline int& fromEnum(int value)
 {
-    int * tmp = new int;
-    *tmp = value;
-    return tmp;
+    return value;
 }
 // well... i tried...but can't register Ogre::ResourceGroupManager...
 //so.. its an alternative
@@ -54,18 +54,19 @@ class WindowEventUtilities
 
 LUALIB_API int luaopen_ogrelua(lua_State *L)
 {
+    int ST_GENERIC = Ogre::ST_GENERIC;
     using namespace luabridge;
     getGlobalNamespace(L)
         .beginNamespace("Ogre")
-            .addVariable("ST_GENERIC",fromEnum(Ogre::ST_GENERIC), false)
-            .addVariable("ST_EXTERIOR_CLOSE",fromEnum(Ogre::ST_EXTERIOR_CLOSE), false)
-            .addVariable("ST_EXTERIOR_FAR",fromEnum(Ogre::ST_EXTERIOR_FAR), false)
-            .addVariable("ST_EXTERIOR_REAL_FAR",fromEnum(Ogre::ST_EXTERIOR_REAL_FAR), false)
-            .addVariable("ST_INTERIOR",fromEnum(Ogre::ST_INTERIOR), false)
+            .addVariable("ST_GENERIC",&fromEnum(ST_GENERIC), false)
+            .addVariable("ST_EXTERIOR_CLOSE",&fromEnum(Ogre::ST_EXTERIOR_CLOSE), false)
+            .addVariable("ST_EXTERIOR_FAR",&fromEnum(Ogre::ST_EXTERIOR_FAR), false)
+            .addVariable("ST_EXTERIOR_REAL_FAR",&fromEnum(Ogre::ST_EXTERIOR_REAL_FAR), false)
+            .addVariable("ST_INTERIOR",&fromEnum(Ogre::ST_INTERIOR), false)
 
-            .addVariable("TS_LOCAL",fromEnum(Ogre::SceneNode::TS_LOCAL), false)
-            .addVariable("TS_PARENT",fromEnum(Ogre::SceneNode::TS_PARENT), false)
-            .addVariable("TS_WORLD",fromEnum(Ogre::SceneNode::TS_WORLD), false)
+            .addVariable("TS_LOCAL",&fromEnum(Ogre::SceneNode::TS_LOCAL), false)
+            .addVariable("TS_PARENT",&fromEnum(Ogre::SceneNode::TS_PARENT), false)
+            .addVariable("TS_WORLD",&fromEnum(Ogre::SceneNode::TS_WORLD), false)
 
             .beginClass<Ogre::FrameListener>("OgreFrameListener")
             .endClass()
@@ -168,6 +169,8 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("setPosition",(void(Ogre::Light::*)(const Ogre::Vector3&))&Ogre::Light::setPosition)
                 .addFunction("setDiffuseColour",(void(Ogre::Light::*)(const Ogre::ColourValue&))&Ogre::Light::setDiffuseColour)
                 .addFunction("setSpecularColour",(void(Ogre::Light::*)(const Ogre::ColourValue&))&Ogre::Light::setSpecularColour)
+                .addFunction("getDerivedDirection",&Ogre::Light::getDerivedDirection)
+                .addFunction("getDiffuseColour",&Ogre::Light::getDiffuseColour)
                 //.addFunction("setType",(void(Ogre::Light::*)(const Ogre::ColourValue&))&Ogre::Light::setType)
             .endClass()
 
@@ -176,6 +179,7 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("getRootSceneNode",&Ogre::SceneManager::getRootSceneNode)
                 .addFunction("createEntity",(Ogre::Entity*(Ogre::SceneManager::*)(const Ogre::String&,const Ogre::String&,const Ogre::String&))&Ogre::SceneManager::createEntity)
                 .addFunction("setAmbientLight",(void(Ogre::SceneManager::*)(Ogre::ColourValue*))&Ogre::SceneManager::setAmbientLight)
+                .addFunction("getAmbientLight",&Ogre::SceneManager::getAmbientLight)
                 .addFunction("createLight",(Ogre::Light*(Ogre::SceneManager::*)(const Ogre::String&))&Ogre::SceneManager::createLight)
             .endClass()
 
@@ -215,6 +219,19 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .beginClass<WindowEventUtilities>("WindowEventUtilities")
                 .addConstructor<void(*)(void)>()
                 .addFunction("messagePump",(void(WindowEventUtilities::*)())&WindowEventUtilities::messagePump)
+            .endClass()
+
+            .beginClass<Ogre::TerrainGlobalOptions>("TerrainGlobalOptions")
+                .addConstructor<void(*)(void)>()
+                .addFunction("setMaxPixelError", &Ogre::TerrainGlobalOptions::setMaxPixelError)
+                .addFunction("setCompositeMapDistance", &Ogre::TerrainGlobalOptions::setCompositeMapDistance)
+                .addFunction("setLightMapDirection", &Ogre::TerrainGlobalOptions::setLightMapDirection)
+                .addFunction("setCompositeMapAmbient", &Ogre::TerrainGlobalOptions::setCompositeMapAmbient)
+                .addFunction("setCompositeMapDiffuse", &Ogre::TerrainGlobalOptions::setCompositeMapDiffuse)
+            .endClass()
+
+            .beginClass<Ogre::TerrainGroup>("TerrainGroup")
+                .addConstructor<void(Ogre::TerrainGroup::*)(Ogre::SceneManager*, Ogre::Terrain::Alignment, unsigned int, Ogre::Real)>()
             .endClass()
 
         .endNamespace();

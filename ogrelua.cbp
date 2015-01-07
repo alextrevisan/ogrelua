@@ -44,6 +44,7 @@
 			<Add directory="$(LUA_HOME)/src" />
 		</Compiler>
 		<Linker>
+			<Add library="$(OGRE_HOME)\lib\release\libOgreTerrain.dll.a" />
 			<Add library="$(OGRE_HOME)\lib\release\libOgreMain.dll.a" />
 			<Add library="$(LUA_HOME)\src\lua51.dll" />
 		</Linker>

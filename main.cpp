@@ -54,11 +54,11 @@ class WindowEventUtilities
 
 LUALIB_API int luaopen_ogrelua(lua_State *L)
 {
-    int ST_GENERIC = Ogre::ST_GENERIC;
     using namespace luabridge;
+
     getGlobalNamespace(L)
         .beginNamespace("Ogre")
-            .addVariable("ST_GENERIC",&fromEnum(ST_GENERIC), false)
+            .addVariable("ST_GENERIC",&fromEnum(Ogre::ST_GENERIC), false)
             .addVariable("ST_EXTERIOR_CLOSE",&fromEnum(Ogre::ST_EXTERIOR_CLOSE), false)
             .addVariable("ST_EXTERIOR_FAR",&fromEnum(Ogre::ST_EXTERIOR_FAR), false)
             .addVariable("ST_EXTERIOR_REAL_FAR",&fromEnum(Ogre::ST_EXTERIOR_REAL_FAR), false)
@@ -221,6 +221,16 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("messagePump",(void(WindowEventUtilities::*)())&WindowEventUtilities::messagePump)
             .endClass()
 
+            /*.beginClass<Ogre::Terrain>("Terrain")
+                //.addFunction("getTerrainPosition",(void(Ogre::Terrain::*)(const Ogre::Vector3&, Ogre::Vector3*))&Ogre::Terrain::getTerrainPosition)
+                .addData("ALIGN_X_Z", ALIGN_X_Z)
+                .addData("ALIGN_X_Y", ALIGN_X_Y)
+                .addData("ALIGN_Y_Z", ALIGN_Y_Z)
+            .endClass()*/
+            .addVariable("ALIGN_X_Z",&fromEnum(Ogre::Terrain::ALIGN_X_Z), false)
+            .addVariable("ALIGN_X_Y",&fromEnum(Ogre::Terrain::ALIGN_X_Y), false)
+            .addVariable("ALIGN_Y_Z",&fromEnum(Ogre::Terrain::ALIGN_Y_Z), false)
+
             .beginClass<Ogre::TerrainGlobalOptions>("TerrainGlobalOptions")
                 .addConstructor<void(*)(void)>()
                 .addFunction("setMaxPixelError", &Ogre::TerrainGlobalOptions::setMaxPixelError)
@@ -230,8 +240,19 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("setCompositeMapDiffuse", &Ogre::TerrainGlobalOptions::setCompositeMapDiffuse)
             .endClass()
 
+            .beginClass<Ogre::TerrainGroup::TerrainIterator>("TerrainIterator")
+                .addFunction("hasMoreElements", &Ogre::TerrainGroup::TerrainIterator::hasMoreElements)
+                .addFunction("getNext", &Ogre::TerrainGroup::TerrainIterator::getNext)
+            .endClass()
+
             .beginClass<Ogre::TerrainGroup>("TerrainGroup")
                 .addConstructor<void(Ogre::TerrainGroup::*)(Ogre::SceneManager*, Ogre::Terrain::Alignment, unsigned int, Ogre::Real)>()
+                .addFunction("setFilenameConvention", &Ogre::TerrainGroup::setFilenameConvention)
+                .addFunction("setOrigin", &Ogre::TerrainGroup::setOrigin)
+                .addFunction("loadAllTerrains", &Ogre::TerrainGroup::loadAllTerrains)
+                .addFunction("getTerrainIterator", (Ogre::TerrainGroup::TerrainIterator(Ogre::TerrainGroup::*)(void))&Ogre::TerrainGroup::getTerrainIterator)
+                .addFunction("freeTemporaryResources",&Ogre::TerrainGroup::freeTemporaryResources)
+                .addFunction("getHeightAtWorldPosition",(float(Ogre::TerrainGroup::*)(const Ogre::Vector3&,Ogre::Terrain**))&Ogre::TerrainGroup::getHeightAtWorldPosition)
             .endClass()
 
         .endNamespace();

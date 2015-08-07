@@ -44,9 +44,9 @@
 			<Add directory="$(LUA_HOME)/src" />
 		</Compiler>
 		<Linker>
-			<Add library="$(OGRE_HOME)\lib\release\libOgreTerrain.dll.a" />
-			<Add library="$(OGRE_HOME)\lib\release\libOgreMain.dll.a" />
-			<Add library="$(LUA_HOME)\src\lua51.dll" />
+			<Add library="$(OGRE_HOME)/bin/release/OgreTerrain.dll" />
+			<Add library="$(OGRE_HOME)/lib/release/libOgreMain.dll.a" />
+			<Add library="$(LUA_HOME)/src/libluajit.a" />
 		</Linker>
 		<Unit filename="FrameListener.cpp" />
 		<Unit filename="FrameListener.h" />

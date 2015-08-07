@@ -5,7 +5,7 @@ extern "C" {
     #include <lua.h>
     #include <lauxlib.h>
 }
-#include "LuaBridge/LuaBridge.h"
+#include "LuaIntf/LuaIntf.h"
 
 #include <OgreFrameListener.h>
 
@@ -55,7 +55,7 @@ public:
 	    if(FrameRenderingQueued==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameRenderingQueued);
 
-        luabridge::push(mL,evt);
+        LuaIntf::Lua::push(mL,evt);
 
         if(lua_pcall(mL,1,1,0)!=0)
         {
@@ -74,7 +74,7 @@ public:
 	    if(FrameStarted==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameStarted);
 
-        luabridge::push(mL,evt);
+        LuaIntf::Lua::push(mL,evt);
 
         if(lua_pcall(mL,1,1,0)!=0)
         {
@@ -93,7 +93,7 @@ public:
 	    if(FrameEnded==0) return true;
         lua_rawgeti(mL, LUA_REGISTRYINDEX, FrameEnded);
 
-        luabridge::push(mL,evt);
+        LuaIntf::Lua::push(mL,evt);
 
         if(lua_pcall(mL,1,1,0)!=0)
         {

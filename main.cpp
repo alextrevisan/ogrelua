@@ -3,7 +3,7 @@ extern "C" {
     #include <lauxlib.h>
 }
 
-#include "LuaBridge/LuaBridge.h"
+#include "LuaIntf/LuaIntf.h"
 
 #include <Ogre.h>
 #include <Terrain/OgreTerrain.h>
@@ -20,98 +20,73 @@ extern "C"
 #define MYNAME "ogrelua " MAJOR "." MINOR "." PATCH
 #define MYVERSION MYNAME " library for " LUA_VERSION " / Oct 2014"
 
-// oh... this... hehehe....
-inline int& fromEnum(int value)
-{
-    return value;
-}
-// well... i tried...but can't register Ogre::ResourceGroupManager...
-//so.. its an alternative
-class ResourceGroupManager
-{
-public:
-    ResourceGroupManager(){}
-    void initialiseAllResourceGroups()
-    {
-        Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
-    }
-    void addResourceLocation(const Ogre::String& name, const Ogre::String& locType,
-                const Ogre::String& resGroup = Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, bool recursive = false, bool readOnly = true)
-    {
-        Ogre::ResourceGroupManager::getSingleton().addResourceLocation(name,locType,resGroup,recursive,readOnly);
-    }
-};
-
-class WindowEventUtilities
-{
-    public:
-    WindowEventUtilities(){}
-    void messagePump()
-    {
-        Ogre::WindowEventUtilities::messagePump();
-    }
-};
-
 LUALIB_API int luaopen_ogrelua(lua_State *L)
 {
-    using namespace luabridge;
+    using namespace LuaIntf;
 
-    getGlobalNamespace(L)
-        .beginNamespace("Ogre")
-            .addVariable("ST_GENERIC",&fromEnum(Ogre::ST_GENERIC), false)
-            .addVariable("ST_EXTERIOR_CLOSE",&fromEnum(Ogre::ST_EXTERIOR_CLOSE), false)
-            .addVariable("ST_EXTERIOR_FAR",&fromEnum(Ogre::ST_EXTERIOR_FAR), false)
-            .addVariable("ST_EXTERIOR_REAL_FAR",&fromEnum(Ogre::ST_EXTERIOR_REAL_FAR), false)
-            .addVariable("ST_INTERIOR",&fromEnum(Ogre::ST_INTERIOR), false)
-
-            .addVariable("TS_LOCAL",&fromEnum(Ogre::SceneNode::TS_LOCAL), false)
-            .addVariable("TS_PARENT",&fromEnum(Ogre::SceneNode::TS_PARENT), false)
-            .addVariable("TS_WORLD",&fromEnum(Ogre::SceneNode::TS_WORLD), false)
+    LuaBinding(L)
+        .beginModule("Ogre")
+            .addConstant("ST_GENERIC",Ogre::ST_GENERIC)
+            .addConstant("ST_EXTERIOR_CLOSE",Ogre::ST_EXTERIOR_CLOSE)
+            .addConstant("ST_EXTERIOR_FAR",Ogre::ST_EXTERIOR_FAR)
+            .addConstant("ST_EXTERIOR_REAL_FAR",Ogre::ST_EXTERIOR_REAL_FAR)
+            .addConstant("ST_INTERIOR",Ogre::ST_INTERIOR)
 
             .beginClass<Ogre::FrameListener>("OgreFrameListener")
             .endClass()
-            .deriveClass<FrameListener, Ogre::FrameListener>("FrameListener")
-                .addConstructor<void(*)(void)>()
+            .beginExtendClass<FrameListener, Ogre::FrameListener>("FrameListener")
+                .addConstructor(LUA_ARGS())
                 .addFunction("setFrameStarted",&FrameListener::setFrameStarted)
                 .addFunction("setFrameRenderingQueued",&FrameListener::setFrameRenderingQueued)
                 .addFunction("setFrameRenderingQueued",&FrameListener::setFrameRenderingQueued)
             .endClass()
 
             .beginClass<Ogre::Degree>("Degree")
-                .addConstructor<void(*)(Ogre::Real)>()
+                .addConstructor(LUA_ARGS(Ogre::Real))
+                .addFunction("valueAngleUnits", Ogre::Degree::valueAngleUnits)
+                .addFunction("valueDegrees", Ogre::Degree::valueDegrees)
+                .addFunction("valueRadians", Ogre::Degree::valueRadians)
             .endClass()
 
             .beginClass<Ogre::Radian>("Radian")
-                .addConstructor<void(*)(Ogre::Real)>()
-                .addConstructor<void(*)(Ogre::Degree)>()
+                .addConstructor(LUA_ARGS(Ogre::Real))
+                .addConstructor(LUA_ARGS(Ogre::Degree))
+                .addFunction("valueDegrees", Ogre::Radian::valueDegrees)
+                .addFunction("valueRadians", Ogre::Radian::valueRadians)
             .endClass()
 
             .beginClass<Ogre::Vector3>("Vector3")
-                .addConstructor<void(*)(const Ogre::Real,const Ogre::Real,const Ogre::Real)>()
-                .addData("x",&Ogre::Vector3::x)
-                .addData("y",&Ogre::Vector3::y)
-                .addData("z",&Ogre::Vector3::z)
+                .addConstructor(LUA_ARGS(const Ogre::Real,const Ogre::Real,const Ogre::Real))
+                .addVariable("x",&Ogre::Vector3::x)
+                .addVariable("y",&Ogre::Vector3::y)
+                .addVariable("z",&Ogre::Vector3::z)
             .endClass()
 
             .beginClass<Ogre::Quaternion>("Quaternion")
-                .addConstructor<void(*)(Ogre::Real,Ogre::Real,Ogre::Real,Ogre::Real)>()
+                .addConstructor(LUA_ARGS(Ogre::Real,Ogre::Real,Ogre::Real,Ogre::Real))
+                .addConstant("IDENTITY", Ogre::Quaternion::IDENTITY)
+                .addFunction("getRoll",Ogre::Quaternion::getRoll)
+                .addFunction("getYaw",Ogre::Quaternion::getYaw)
+                .addFunction("getPitch",Ogre::Quaternion::getPitch)
             .endClass()
 
             .beginClass<Ogre::MovableObject>("MovableObject")
             .endClass()
 
-            .deriveClass<Ogre::Entity, Ogre::MovableObject>("Entity")
+            .beginExtendClass<Ogre::Entity, Ogre::MovableObject>("Entity")
             .endClass()
 
             .beginClass<Ogre::Node>("Node")
             .endClass()
 
-
             .beginClass<Ogre::VisibleObjectsBoundsInfo>("VisibleObjectsBoundsInfo")
-                .addConstructor<void(*)(void)>()
+                .addConstructor(LUA_ARGS(void))
             .endClass()
 
-            .deriveClass<Ogre::SceneNode, Ogre::Node>("SceneNode")
+            .beginExtendClass<Ogre::SceneNode, Ogre::Node>("SceneNode")
+                .addConstant("TS_LOCAL",Ogre::SceneNode::TS_LOCAL)
+                .addConstant("TS_PARENT",Ogre::SceneNode::TS_PARENT)
+                .addConstant("TS_WORLD",Ogre::SceneNode::TS_WORLD)
                 .addFunction("attachObject",&Ogre::SceneNode::attachObject)
                 .addFunction("numAttachedObjects",&Ogre::SceneNode::numAttachedObjects)
                 .addFunction("getAttachedObject",(Ogre::MovableObject*(Ogre::SceneNode::*)(unsigned short))&Ogre::SceneNode::getAttachedObject)
@@ -135,6 +110,8 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("findLights",&Ogre::SceneNode::findLights)
                 .addFunction("setFixedYawAxis",&Ogre::SceneNode::setFixedYawAxis)
                 .addFunction("yaw",(void(Ogre::SceneNode::*)(const Ogre::Radian&,int))&Ogre::SceneNode::yaw)
+                .addFunction("pitch",(void(Ogre::SceneNode::*)(const Ogre::Radian&,int))&Ogre::SceneNode::pitch)
+                .addFunction("roll",(void(Ogre::SceneNode::*)(const Ogre::Radian&,int))&Ogre::SceneNode::roll)
                 .addFunction("setDirection",(void(Ogre::SceneNode::*)(const Ogre::Vector3&, Ogre::SceneNode::TransformSpace, const Ogre::Vector3&))&Ogre::SceneNode::setDirection)
                 .addFunction("lookAt",(void(Ogre::SceneNode::*)(const Ogre::Vector3&,Ogre::SceneNode::TransformSpace, const Ogre::Vector3&))&Ogre::SceneNode::lookAt)
                 .addFunction("setAutoTracking",&Ogre::SceneNode::setAutoTracking)
@@ -148,11 +125,12 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("setPosition",(void(Ogre::SceneNode::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::SceneNode::setPosition)
                 .addFunction("setScale",(void(Ogre::SceneNode::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::SceneNode::setScale)
                 .addFunction("getPosition",(const Ogre::Vector3&(Ogre::SceneNode::*)(void))&Ogre::SceneNode::getPosition)
+                .addFunction("translate",(void(Ogre::SceneNode::*)(const Ogre::Vector3&,Ogre::SceneNode::TransformSpace))&Ogre::SceneNode::translate)
+                .addFunction("getOrientation",Ogre::SceneNode::getOrientation)
+                .addFunction("setOrientation",(void(Ogre::SceneNode::*)(const Ogre::Quaternion&))Ogre::SceneNode::setOrientation)
             .endClass()
 
-
-
-            .deriveClass<Ogre::Camera, Ogre::MovableObject>("Camera")
+            .beginExtendClass<Ogre::Camera, Ogre::MovableObject>("Camera")
                 .addFunction("setPosition",(void(Ogre::Camera::*)(Ogre::Real,Ogre::Real,Ogre::Real))&Ogre::Camera::setPosition)
                 .addFunction("getPosition",(const Ogre::Vector3&(Ogre::Camera::*)(void))&Ogre::Camera::getPosition)
                 .addFunction("lookAt",(void(Ogre::Camera::*)(const Ogre::Vector3&))&Ogre::Camera::lookAt)
@@ -162,7 +140,7 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .endClass()
 
             .beginClass<Ogre::ColourValue>("ColourValue")
-                .addConstructor<void(*)(float,float,float,float)>()
+                .addConstructor(LUA_ARGS(float,float,float,float))
             .endClass()
 
             .beginClass<Ogre::Light>("Light")
@@ -197,42 +175,42 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("isClosed",&Ogre::RenderWindow::isClosed)
             .endClass()
             .beginClass<Ogre::FrameEvent>("FrameEvent")
-                .addData("timeSinceLastEvent", &Ogre::FrameEvent::timeSinceLastEvent)
-                .addData("timeSinceLastFrame", &Ogre::FrameEvent::timeSinceLastFrame)
+                .addVariable("timeSinceLastEvent", &Ogre::FrameEvent::timeSinceLastEvent, false)
+                .addVariable("timeSinceLastFrame", &Ogre::FrameEvent::timeSinceLastFrame, false)
             .endClass()
             .beginClass<Ogre::Root>("Root")
-                .addConstructor<void(Ogre::Root::*)(const Ogre::String&, const Ogre::String&, const Ogre::String&)>()
+                .addConstructor(LUA_ARGS(_opt<const Ogre::String&>, _opt<const Ogre::String&>, _opt<const Ogre::String&>))
                 .addFunction("restoreConfig",&Ogre::Root::restoreConfig)
                 .addFunction("showConfigDialog",&Ogre::Root::showConfigDialog)
                 .addFunction("initialise",&Ogre::Root::initialise)
                 .addFunction("createSceneManager",(Ogre::SceneManager*(Ogre::Root::*)(Ogre::SceneTypeMask, const Ogre::String&))&Ogre::Root::createSceneManager)
                 .addFunction("renderOneFrame", (bool(Ogre::Root::*)(void))&Ogre::Root::renderOneFrame)
                 .addFunction("addFrameListener", &Ogre::Root::addFrameListener)
+                .addFunction("removeFrameListener", &Ogre::Root::removeFrameListener)
                 .addFunction("startRendering", &Ogre::Root::startRendering)
             .endClass()
 
-            .beginClass<ResourceGroupManager>("ResourceGroupManager")
-                .addConstructor<void(*)(void)>()
-                .addFunction("addResourceLocation",&ResourceGroupManager::addResourceLocation)
-                .addFunction("initialiseAllResourceGroups",&ResourceGroupManager::initialiseAllResourceGroups)
+            .beginClass<Ogre::ResourceGroupManager>("ResourceGroupManager")
+                .addStaticFunction("getSingleton",&Ogre::ResourceGroupManager::getSingleton)
+                .addFunction("addResourceLocation",&Ogre::ResourceGroupManager::addResourceLocation)
+                .addFunction("initialiseAllResourceGroups",&Ogre::ResourceGroupManager::initialiseAllResourceGroups)
             .endClass()
-            .beginClass<WindowEventUtilities>("WindowEventUtilities")
-                .addConstructor<void(*)(void)>()
-                .addFunction("messagePump",(void(WindowEventUtilities::*)())&WindowEventUtilities::messagePump)
+            .beginClass<Ogre::WindowEventUtilities>("WindowEventUtilities")
+                .addStaticFunction("messagePump",&Ogre::WindowEventUtilities::messagePump)
             .endClass()
-
-            /*.beginClass<Ogre::Terrain>("Terrain")
+/*
+            .beginClass<Ogre::Terrain>("Terrain")
                 //.addFunction("getTerrainPosition",(void(Ogre::Terrain::*)(const Ogre::Vector3&, Ogre::Vector3*))&Ogre::Terrain::getTerrainPosition)
-                .addData("ALIGN_X_Z", ALIGN_X_Z)
-                .addData("ALIGN_X_Y", ALIGN_X_Y)
-                .addData("ALIGN_Y_Z", ALIGN_Y_Z)
-            .endClass()*/
-            .addVariable("ALIGN_X_Z",&fromEnum(Ogre::Terrain::ALIGN_X_Z), false)
-            .addVariable("ALIGN_X_Y",&fromEnum(Ogre::Terrain::ALIGN_X_Y), false)
-            .addVariable("ALIGN_Y_Z",&fromEnum(Ogre::Terrain::ALIGN_Y_Z), false)
+                .addConstant("ALIGN_X_Z", Ogre::Terrain::ALIGN_X_Z)
+                .addConstant("ALIGN_X_Y", Ogre::Terrain::ALIGN_X_Y)
+                .addConstant("ALIGN_Y_Z", Ogre::Terrain::ALIGN_Y_Z)
+            .endClass()
+            //.addConstant("ALIGN_X_Z",&fromEnum(Ogre::Terrain::ALIGN_X_Z), false)
+            //.addConstant("ALIGN_X_Y",&fromEnum(Ogre::Terrain::ALIGN_X_Y), false)
+            //.addConstant("ALIGN_Y_Z",&fromEnum(Ogre::Terrain::ALIGN_Y_Z), false)
 
             .beginClass<Ogre::TerrainGlobalOptions>("TerrainGlobalOptions")
-                .addConstructor<void(*)(void)>()
+                .addConstructor(LUA_ARGS(void))
                 .addFunction("setMaxPixelError", &Ogre::TerrainGlobalOptions::setMaxPixelError)
                 .addFunction("setCompositeMapDistance", &Ogre::TerrainGlobalOptions::setCompositeMapDistance)
                 .addFunction("setLightMapDirection", &Ogre::TerrainGlobalOptions::setLightMapDirection)
@@ -246,15 +224,15 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .endClass()
 
             .beginClass<Ogre::TerrainGroup>("TerrainGroup")
-                .addConstructor<void(Ogre::TerrainGroup::*)(Ogre::SceneManager*, Ogre::Terrain::Alignment, unsigned int, Ogre::Real)>()
+                .addConstructor(LUA_ARGS(Ogre::SceneManager*, Ogre::Terrain::Alignment, unsigned int, Ogre::Real))
                 .addFunction("setFilenameConvention", &Ogre::TerrainGroup::setFilenameConvention)
                 .addFunction("setOrigin", &Ogre::TerrainGroup::setOrigin)
                 .addFunction("loadAllTerrains", &Ogre::TerrainGroup::loadAllTerrains)
                 .addFunction("getTerrainIterator", (Ogre::TerrainGroup::TerrainIterator(Ogre::TerrainGroup::*)(void))&Ogre::TerrainGroup::getTerrainIterator)
                 .addFunction("freeTemporaryResources",&Ogre::TerrainGroup::freeTemporaryResources)
                 .addFunction("getHeightAtWorldPosition",(float(Ogre::TerrainGroup::*)(const Ogre::Vector3&,Ogre::Terrain**))&Ogre::TerrainGroup::getHeightAtWorldPosition)
-            .endClass()
+            .endClass()*/
 
-        .endNamespace();
+        .endModule();
     return 1;
 }

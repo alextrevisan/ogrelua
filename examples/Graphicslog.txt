@@ -1,0 +1,29 @@
+09:34:34: Creating resource group General
+09:34:34: Creating resource group Internal
+09:34:34: Creating resource group Autodetect
+09:34:34: SceneManagerFactory for type 'DefaultSceneManager' registered.
+09:34:34: Registering ResourceManager for type Material
+09:34:34: Registering ResourceManager for type Mesh
+09:34:34: Registering ResourceManager for type Skeleton
+09:34:34: MovableObjectFactory for type 'ParticleSystem' registered.
+09:34:34: ArchiveFactory for archive type FileSystem registered.
+09:34:34: ArchiveFactory for archive type Zip registered.
+09:34:34: ArchiveFactory for archive type EmbeddedZip registered.
+09:34:34: DDS codec registering
+09:34:34: FreeImage version: 3.15.3
+09:34:34: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+09:34:34: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic
+09:34:34: Registering ResourceManager for type HighLevelGpuProgram
+09:34:34: Registering ResourceManager for type Compositor
+09:34:34: MovableObjectFactory for type 'Entity' registered.
+09:34:34: MovableObjectFactory for type 'Light' registered.
+09:34:34: MovableObjectFactory for type 'BillboardSet' registered.
+09:34:34: MovableObjectFactory for type 'ManualObject' registered.
+09:34:34: MovableObjectFactory for type 'BillboardChain' registered.
+09:34:34: MovableObjectFactory for type 'RibbonTrail' registered.
+09:34:34: Loading library .\RenderSystem_GL
+09:34:34: Installing plugin: GL RenderSystem
+09:34:34: OpenGL Rendering Subsystem created.
+09:34:35: Plugin successfully installed
+09:34:35: *-*-* OGRE Initialising
+09:34:35: *-*-* Version 1.9.0 (Ghadamon)

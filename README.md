@@ -37,14 +37,14 @@ function createViewports()
 	mCamera:setAspectRatio(vp:getActualWidth() / vp:getActualHeight());
 end
 function initResources()
-	mRGM = Ogre.ResourceGroupManager()
+	mRGM = Ogre.ResourceGroupManager:getSingleton()
 
-	mRGM:addResourceLocation("media/packs/SdkTrays.zip",	"Zip",			"Essencial", false, true)
-	mRGM:addResourceLocation("media/materials/scripts",	    "FileSystem",	"Recursos" , false, true)
-	mRGM:addResourceLocation("media/materials/textures",	"FileSystem",	"Recursos" , false, true)
-	mRGM:addResourceLocation("media/models",				"FileSystem",	"Recursos" , false, true)
-	mRGM:addResourceLocation("media/RTShaderLib/GLSL",				"FileSystem",	"Recursos" , false, true)
-	mRGM:addResourceLocation("media/materials/programs/GLSL",				"FileSystem",	"Recursos" , false, true)
+    mRGM:addResourceLocation("media/packs/SdkTrays.zip",     "Zip",       "Essencial", false, true)
+    mRGM:addResourceLocation("media/materials/scripts",      "FileSystem","Recursos" , false, true)
+    mRGM:addResourceLocation("media/materials/textures",     "FileSystem","Recursos" , false, true)
+    mRGM:addResourceLocation("media/models",                 "FileSystem","Recursos" , false, true)
+    mRGM:addResourceLocation("media/RTShaderLib/GLSL",       "FileSystem","Recursos" , false, true)
+    mRGM:addResourceLocation("media/materials/programs/GLSL","FileSystem","Recursos" , false, true)
 
 	mRGM:initialiseAllResourceGroups()
 end

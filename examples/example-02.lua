@@ -1,10 +1,13 @@
 require("ogrelua")
+
 ship = require 'ship'
 local mRoot
 local mWindow
 local mSceneMgr
 local mCamera
 local mRGM
+
+local mInputManager = InputManager.getSingletonPtr()
 
 local mainShip
 
@@ -15,6 +18,7 @@ function initOgre()
     end
     mWindow = mRoot:initialise(true,"Lua + Ogre Rocks!!!","")
     mSceneMgr = mRoot:createSceneManager(Ogre.ST_GENERIC,"")
+    mInputManager:initialise(mWindow)
 end
 function createCamera()
     mCamera = mSceneMgr:createCamera("PlayerCam")
@@ -68,10 +72,13 @@ initResources()
 createScene()
 local mTime = 0
 local mFPS = 0
-function exampleFrameListener(evt)
+
+local WPressed, APressed, DPressed, SPressed
+local function exampleFrameListener(evt)
     if mWindow:isClosed() then
         return false;
     end
+    mInputManager:capture()
     mTime = mTime + evt.timeSinceLastFrame
     mFPS = mFPS + 1
     if mTime > 1 then
@@ -79,14 +86,56 @@ function exampleFrameListener(evt)
         mFPS = 0
         mTime = 0
     end
+    
+    if WPressed then mainShip.moveForward() end
+    if APressed then mainShip.turnLeft() end
+    if DPressed then mainShip.turnRight() end
+    if SPressed then mainShip.moveBackwars() end
+    
     mainShip.update(evt.timeSinceLastFrame)
-    mainShip.turnLeft()
-    mainShip.accelerate(true)
+    
     return true;
 end
 
 listener = Ogre.FrameListener()
 listener:setFrameStarted(exampleFrameListener)
 mRoot:addFrameListener(listener)
+
+local function exampleKeyPressed(evt)
+    print("Pressed: "..evt.key)
+    if evt.key == 17 then --W
+        WPressed = true
+    end
+    if evt.key == 31 then --S
+        SPressed = true
+    end
+    if evt.key == 30 then --A
+        APressed = true
+    end
+    if evt.key == 32 then --D
+        DPressed = true
+    end
+    return true
+end
+local function exampleKeyReleased(evt)
+    if evt.key == 17 then --W
+        WPressed = false
+    end
+    if evt.key == 31 then --S
+        SPressed = false
+    end
+    if evt.key == 30 then --A
+        APressed = false
+    end
+    if evt.key == 32 then --D
+        DPressed = false
+    end
+    return true
+end
+
+KeyListener = OIS.KeyListener()
+KeyListener:setKeyPressedListener(exampleKeyPressed)
+KeyListener:setKeyReleasedListener(exampleKeyReleased)
+mInputManager:addKeyListener(KeyListener, "shipMove")
 
 mRoot:startRendering()

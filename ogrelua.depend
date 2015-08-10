@@ -1,0 +1,1765 @@
+# depslib dependency file v1.0
+1439216107 source:d:\desenvolvimento\dependencies\ogrelua\inputmanager.cpp
+	"InputManager.h"
+
+1439216106 d:\desenvolvimento\dependencies\ogrelua\inputmanager.h
+	<OISMouse.h>
+	<OISKeyboard.h>
+	<OISJoyStick.h>
+	<OISInputManager.h>
+	<OgreRenderWindow.h>
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oismouse.h
+	"OISObject.h"
+	"OISEvents.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisobject.h
+	"OISPrereqs.h"
+	"OISInterface.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisprereqs.h
+	<vector>
+	<string>
+	<map>
+	"OISConfig.h"
+	<unistd.h>
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisconfig.h
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisinterface.h
+	"OISPrereqs.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisevents.h
+	"OISPrereqs.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oiskeyboard.h
+	"OISObject.h"
+	"OISEvents.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisjoystick.h
+	"OISObject.h"
+	"OISEvents.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisinputmanager.h
+	"OISPrereqs.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderwindow.h
+	"OgrePrerequisites.h"
+	"OgreRenderTarget.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreprerequisites.h
+	"OgrePlatform.h"
+	<string>
+	"OgreStdHeaders.h"
+	"OgreMemoryAllocatorConfig.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreplatform.h
+	"OgreConfig.h"
+	<winapifamily.h>
+	<_mingw.h>
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreconfig.h
+	"OgreBuildSettings.h"
+
+1437570579 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrebuildsettings.h
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrestdheaders.h
+	<cassert>
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	<cstring>
+	<cstdarg>
+	<cmath>
+	<vector>
+	<map>
+	<string>
+	<set>
+	<list>
+	<deque>
+	<queue>
+	<bitset>
+	<tr1/unordered_map>
+	<tr1/unordered_set>
+	<ext/hash_map>
+	<ext/hash_set>
+	<unordered_map>
+	<unordered_set>
+	<tr1/unordered_map>
+	<tr1/unordered_set>
+	<unordered_map>
+	<unordered_set>
+	<boost/unordered_map.hpp>
+	<boost/unordered_set.hpp>
+	<algorithm>
+	<functional>
+	<limits>
+	<fstream>
+	<iostream>
+	<iomanip>
+	<sstream>
+	<sys/types.h>
+	<sys/stat.h>
+	<unistd.h>
+	<unistd.h>
+	<dlfcn.h>
+	<unistd.h>
+	<sys/param.h>
+	<CoreFoundation/CoreFoundation.h>
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememoryallocatorconfig.h
+	"OgreMemoryAllocatedObject.h"
+	"OgreHeaderPrefix.h"
+	"OgreMemoryAllocatedObject.h"
+	"OgreMemorySTLAllocator.h"
+	"OgreMemoryNedPooling.h"
+	"OgreMemoryNedAlloc.h"
+	"OgreMemoryStdAlloc.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememoryallocatedobject.h
+	"OgrePrerequisites.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreheaderprefix.h
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreheadersuffix.h
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememorystlallocator.h
+	"OgrePrerequisites.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememorynedpooling.h
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememorynedalloc.h
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememorystdalloc.h
+	<memory>
+	<limits>
+	"OgreAlignedAllocator.h"
+	"OgreMemoryTracker.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508954 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrealignedallocator.h
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrememorytracker.h
+	"OgreHeaderPrefix.h"
+	<tr1/unordered_map>
+	<ext/hash_map>
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderSuffix.h"
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreadheaders.h
+	"OgreThreadHeadersBoost.h"
+	"OgreThreadHeadersPoco.h"
+	"OgreThreadHeadersTBB.h"
+	"OgreThreadDefines.h"
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreadheadersboost.h
+	<boost/thread/tss.hpp>
+	<boost/thread/recursive_mutex.hpp>
+	<boost/thread/condition.hpp>
+	<boost/thread/thread.hpp>
+	<boost/thread/shared_mutex.hpp>
+	<boost/thread/locks.hpp>
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreadheaderspoco.h
+	<Poco/ThreadLocal.h>
+	<Poco/Mutex.h>
+	<Poco/Condition.h>
+	<Poco/Thread.h>
+	<Poco/Runnable.h>
+	<Poco/RWLock.h>
+	<Poco/Environment.h>
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreadheaderstbb.h
+	<tbb/recursive_mutex.h>
+	<tbb/task_group.h>
+	<tbb/task_scheduler_init.h>
+	<tbb/queuing_rw_mutex.h>
+	<tbb/enumerable_thread_specific.h>
+	<tbb/tbb_thread.h>
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreaddefines.h
+	"OgreThreadDefinesNone.h"
+	"OgreThreadDefinesBoost.h"
+	"OgreThreadDefinesPoco.h"
+	"OgreThreadDefinesTBB.h"
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreaddefinesnone.h
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreaddefinesboost.h
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreaddefinespoco.h
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\threading\ogrethreaddefinestbb.h
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerendertarget.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreTextureManager.h"
+	"OgreViewport.h"
+	"OgreTimer.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrestring.h
+	"OgrePrerequisites.h"
+	"OgreHeaderPrefix.h"
+	<tr1/unordered_map>
+	<ext/hash_map>
+	"OgreHeaderSuffix.h"
+	<windows.h>
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogretexturemanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreTexture.h"
+	"OgreSingleton.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreresourcemanager.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreResourceGroupManager.h"
+	"OgreIteratorWrappers.h"
+	"OgreCommon.h"
+	"OgreDataStream.h"
+	"OgreStringVector.h"
+	"OgreScriptLoader.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreresource.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSharedPtr.h"
+	"OgreStringInterface.h"
+	"OgreAtomicScalar.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresharedptr.h
+	"OgrePrerequisites.h"
+	"OgreAtomicScalar.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreatomicscalar.h
+	<signal.h>
+	"OgrePrerequisites.h"
+	"OgreException.h"
+	"OgrePlatformInformation.h"
+	<windows.h>
+	<intrin.h>
+	"Threading/OgreThreadHeaders.h"
+	"Threading/OgreThreadHeaders.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreexception.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	<exception>
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreplatforminformation.h
+	"OgrePrerequisites.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrestringinterface.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreCommon.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecommon.h
+	"OgreString.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreresourcegroupmanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreCommon.h"
+	"OgreDataStream.h"
+	"OgreResource.h"
+	"OgreArchive.h"
+	"OgreIteratorWrappers.h"
+	<ctime>
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresingleton.h
+	"OgrePrerequisites.h"
+
+1437508958 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogredatastream.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSharedPtr.h"
+	<istream>
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrearchive.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreDataStream.h"
+	"OgreSharedPtr.h"
+	"OgreStringVector.h"
+	"OgreException.h"
+	<ctime>
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrestringvector.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSharedPtr.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreiteratorwrappers.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrapper.h"
+	"OgreIteratorRange.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreiteratorwrapper.h
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508960 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreiteratorrange.h
+	"OgreHeaderPrefix.h"
+	<boost/range.hpp>
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrescriptloader.h
+	"OgrePrerequisites.h"
+	"OgreDataStream.h"
+	"OgreStringVector.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogretexture.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreResource.h"
+	"OgreImage.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwarebuffer.h
+	"OgrePrerequisites.h"
+	"OgreException.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreimage.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgrePixelFormat.h"
+	"OgreDataStream.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepixelformat.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreviewport.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreColourValue.h"
+	"OgreFrustum.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecolourvalue.h
+	"OgrePrerequisites.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrefrustum.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreAxisAlignedBox.h"
+	"OgreVertexIndexData.h"
+	"OgreMovablePlane.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremovableobject.h
+	"OgrePrerequisites.h"
+	"OgreRenderQueue.h"
+	"OgreAxisAlignedBox.h"
+	"OgreSphere.h"
+	"OgreShadowCaster.h"
+	"OgreFactoryObj.h"
+	"OgreAnimable.h"
+	"OgreAny.h"
+	"OgreUserObjectBindings.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderqueue.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508956 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreaxisalignedbox.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreMatrix4.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrevector3.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+	"OgreQuaternion.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremath.h
+	"OgrePrerequisites.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrequaternion.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrematrix4.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreMatrix3.h"
+	"OgreVector4.h"
+	"OgrePlane.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrematrix3.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrevector4.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreplane.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresphere.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowcaster.h
+	"OgrePrerequisites.h"
+	"OgreRenderable.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderable.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreRenderOperation.h"
+	"OgreMatrix4.h"
+	"OgreMaterial.h"
+	"OgrePlane.h"
+	"OgreGpuProgram.h"
+	"OgreVector4.h"
+	"OgreException.h"
+	"OgreUserObjectBindings.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderoperation.h
+	"OgrePrerequisites.h"
+	"OgreVertexIndexData.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrevertexindexdata.h
+	"OgrePrerequisites.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreHardwareIndexBuffer.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwarevertexbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+	"OgreColourValue.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwareindexbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrematerial.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreIteratorWrappers.h"
+	"OgreCommon.h"
+	"OgreColourValue.h"
+	"OgreBlendMode.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreblendmode.h
+	"OgrePrerequisites.h"
+	"OgreColourValue.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogregpuprogram.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreSharedPtr.h"
+	"OgreIteratorWrappers.h"
+	"OgreSerializer.h"
+	"OgreRenderOperation.h"
+	"OgreGpuProgramParams.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreserializer.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreDataStream.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogregpuprogramparams.h
+	"OgrePrerequisites.h"
+	"OgreSharedPtr.h"
+	"OgreIteratorWrappers.h"
+	"OgreSerializer.h"
+	"OgreRenderOperation.h"
+	"OgreAny.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreany.h
+	"OgrePrerequisites.h"
+	"OgreException.h"
+	"OgreString.h"
+	<algorithm>
+	<typeinfo>
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreuserobjectbindings.h
+	"OgrePrerequisites.h"
+	"OgreAny.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrefactoryobj.h
+	"OgrePrerequisites.h"
+
+1437508954 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreanimable.h
+	"OgrePrerequisites.h"
+	"OgreVector2.h"
+	"OgreVector3.h"
+	"OgreVector4.h"
+	"OgreQuaternion.h"
+	"OgreColourValue.h"
+	"OgreSharedPtr.h"
+	"OgreStringVector.h"
+	"OgreException.h"
+	"OgreAny.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrevector2.h
+	"OgrePrerequisites.h"
+	"OgreMath.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremovableplane.h
+	"OgrePrerequisites.h"
+	"OgrePlane.h"
+	"OgreMovableObject.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogretimer.h
+	"OgrePrerequisites.h"
+	"OgrePlatform.h"
+	"WIN32/OgreTimerImp.h"
+	"GLX/OgreTimerImp.h"
+	"NaCl/OgreTimerImp.h"
+	"OSX/OgreTimerImp.h"
+	"iOS/OgreTimerImp.h"
+	"Android/OgreTimerImp.h"
+	"FlashCC/OgreTimerImp.h"
+
+1437508969 d:\desenvolvimento\dependencies\ogresdk\include\ogre\win32\ogretimerimp.h
+	<windows.h>
+
+1439215252 source:d:\desenvolvimento\dependencies\ogrelua\keylistener.cpp
+	"KeyListener.h"
+
+1439227758 d:\desenvolvimento\dependencies\ogrelua\keylistener.h
+	<lua.h>
+	<lauxlib.h>
+	"LuaIntf/LuaIntf.h"
+	<OIS.h>
+
+1431649800 d:\desenvolvimento\dependencies\luajit-2.0.4\src\lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1431649800 d:\desenvolvimento\dependencies\luajit-2.0.4\src\luaconf.h
+	<limits.h>
+	<stddef.h>
+	<assert.h>
+
+1431649800 d:\desenvolvimento\dependencies\luajit-2.0.4\src\lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\luaintf.h
+	"LuaContext.h"
+	"impl/CppArg.h"
+	"impl/CppInvoke.h"
+	"impl/CppObject.h"
+	"impl/CppBindModule.h"
+	"impl/CppBindClass.h"
+	"impl/CppFunction.h"
+	"src/CppBindModule.cpp"
+	"src/CppBindClass.cpp"
+	"src/CppObject.cpp"
+	"src/CppFunction.cpp"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\luacontext.h
+	"LuaRef.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\luaref.h
+	"LuaState.h"
+	<functional>
+	<tuple>
+	<memory>
+	"src/LuaRef.cpp"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\luastate.h
+	"LuaCompat.h"
+	<cassert>
+	<cstring>
+	<string>
+	<exception>
+	<locale>
+	<codecvt>
+	"impl/LuaException.h"
+	"impl/LuaType.h"
+	"src/LuaState.cpp"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\luacompat.h
+	"lualib.h"
+	"lauxlib.h"
+	<stdint.h>
+	"src/LuaCompat.cpp"
+
+1431649800 d:\desenvolvimento\dependencies\luajit-2.0.4\src\lualib.h
+	"lua.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luacompat.cpp
+	"LuaIntf/LuaCompat.h"
+	<errno.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\luaexception.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\luatype.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luastate.cpp
+	"LuaIntf/LuaIntf.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luaref.cpp
+	"LuaIntf/LuaIntf.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cpparg.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppinvoke.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppobject.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppbindmodule.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppbindclass.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppfunction.h
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppbindmodule.cpp
+	"LuaIntf/LuaIntf.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppbindclass.cpp
+	"LuaIntf/LuaIntf.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppobject.cpp
+	"LuaIntf/LuaIntf.h"
+
+1432173084 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppfunction.cpp
+	"LuaIntf/LuaIntf.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\ois.h
+	"OISPrereqs.h"
+	"OISObject.h"
+	"OISMouse.h"
+	"OISKeyboard.h"
+	"OISJoyStick.h"
+	"OISMultiTouch.h"
+	"OISInputManager.h"
+	"OISFactoryCreator.h"
+	"OISException.h"
+	"OISEvents.h"
+	"OISEffect.h"
+	"OISInterface.h"
+	"OISForceFeedback.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oismultitouch.h
+	"OISObject.h"
+	"OISEvents.h"
+	<set>
+	<vector>
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisfactorycreator.h
+	"OISPrereqs.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisexception.h
+	"OISPrereqs.h"
+	<exception>
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oiseffect.h
+	"OISPrereqs.h"
+
+1435058586 d:\desenvolvimento\dependencies\ogresdk\include\ois\oisforcefeedback.h
+	"OISPrereqs.h"
+	"OISInterface.h"
+	"OISEffect.h"
+
+1420727692 source:d:\desenvolvimento\dependencies\ogrelua\framelistener.cpp
+	"FrameListener.h"
+
+1437573785 d:\desenvolvimento\dependencies\ogrelua\framelistener.h
+	<lua.h>
+	<lauxlib.h>
+	"LuaIntf/LuaIntf.h"
+	<OgreFrameListener.h>
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreframelistener.h
+	"OgrePrerequisites.h"
+
+1439227669 source:d:\desenvolvimento\dependencies\ogrelua\main.cpp
+	<lua.h>
+	<lauxlib.h>
+	"LuaIntf/LuaIntf.h"
+	<Ogre.h>
+	<OIS.h>
+	"FrameListener.h"
+	"InputManager.h"
+	"KeyListener.h"
+
+1437508954 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogre.h
+	"OgrePrerequisites.h"
+	"OgreAnimation.h"
+	"OgreAnimationState.h"
+	"OgreAnimationTrack.h"
+	"OgreAny.h"
+	"OgreArchive.h"
+	"OgreArchiveManager.h"
+	"OgreAxisAlignedBox.h"
+	"OgreBillboardChain.h"
+	"OgreBillboardSet.h"
+	"OgreBone.h"
+	"OgreCamera.h"
+	"OgreConfigFile.h"
+	"OgreControllerManager.h"
+	"OgreDataStream.h"
+	"OgreEntity.h"
+	"OgreException.h"
+	"OgreFrustum.h"
+	"OgreGpuProgram.h"
+	"OgreGpuProgramManager.h"
+	"OgreHardwareBufferManager.h"
+	"OgreHardwareIndexBuffer.h"
+	"OgreHardwarePixelBuffer.h"
+	"OgreHardwareOcclusionQuery.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreHardwarePixelBuffer.h"
+	"OgreHighLevelGpuProgram.h"
+	"OgreHighLevelGpuProgramManager.h"
+	"OgreInstanceBatch.h"
+	"OgreInstancedEntity.h"
+	"OgreInstanceManager.h"
+	"OgreKeyFrame.h"
+	"OgreLight.h"
+	"OgreLogManager.h"
+	"OgreManualObject.h"
+	"OgreMaterial.h"
+	"OgreMaterialManager.h"
+	"OgreMaterialSerializer.h"
+	"OgreMath.h"
+	"OgreMatrix3.h"
+	"OgreMatrix4.h"
+	"OgreMesh.h"
+	"OgreMeshManager.h"
+	"OgreMeshSerializer.h"
+	"OgreParticleAffector.h"
+	"OgreParticleEmitter.h"
+	"OgreParticleSystemManager.h"
+	"OgrePass.h"
+	"OgrePatchMesh.h"
+	"OgrePatchSurface.h"
+	"OgreProfiler.h"
+	"OgreRadixSort.h"
+	"OgreRenderQueueInvocation.h"
+	"OgreRenderQueueListener.h"
+	"OgreRenderObjectListener.h"
+	"OgreRenderSystem.h"
+	"OgreRenderTargetListener.h"
+	"OgreRenderTexture.h"
+	"OgreRenderWindow.h"
+	"OgreResourceBackgroundQueue.h"
+	"OgreResourceGroupManager.h"
+	"OgreRibbonTrail.h"
+	"OgreRoot.h"
+	"OgreSceneManager.h"
+	"OgreSceneManagerEnumerator.h"
+	"OgreSceneNode.h"
+	"OgreSimpleRenderable.h"
+	"OgreSkeleton.h"
+	"OgreSkeletonInstance.h"
+	"OgreSkeletonManager.h"
+	"OgreSkeletonSerializer.h"
+	"OgreStaticGeometry.h"
+	"OgreString.h"
+	"OgreStringConverter.h"
+	"OgreStringVector.h"
+	"OgreSubEntity.h"
+	"OgreSubMesh.h"
+	"OgreTechnique.h"
+	"OgreTextureManager.h"
+	"OgreTextureUnitState.h"
+	"OgreVector2.h"
+	"OgreViewport.h"
+	"OgreCompositor.h"
+	"OgreCompositorManager.h"
+	"OgreCompositorChain.h"
+	"OgreCompositorInstance.h"
+	"OgreCompositionTechnique.h"
+	"OgreCompositionPass.h"
+	"OgreCompositionTargetPass.h"
+	"OgreWindowEventUtilities.h"
+	"OgreShadowCameraSetup.h"
+	"OgreShadowCameraSetupFocused.h"
+	"OgreShadowCameraSetupLiSPSM.h"
+	"OgreShadowCameraSetupPlaneOptimal.h"
+	"OgreShadowCameraSetupPSSM.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreanimation.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreIteratorWrappers.h"
+	"OgreAnimable.h"
+	"OgreAnimationTrack.h"
+	"OgreAnimationState.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreanimationtrack.h
+	"OgrePrerequisites.h"
+	"OgreSimpleSpline.h"
+	"OgreRotationalSpline.h"
+	"OgreKeyFrame.h"
+	"OgreAnimable.h"
+	"OgrePose.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresimplespline.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreMatrix4.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerotationalspline.h
+	"OgrePrerequisites.h"
+	"OgreQuaternion.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrekeyframe.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreQuaternion.h"
+	"OgreAny.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepose.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreVector3.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreanimationstate.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreController.h"
+	"OgreIteratorWrappers.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecontroller.h
+	"OgrePrerequisites.h"
+	"OgreSharedPtr.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrearchivemanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508956 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrebillboardchain.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508956 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrebillboardset.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreRadixSort.h"
+	"OgreCommon.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreradixsort.h
+	"OgrePrerequisites.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrebone.h
+	"OgrePrerequisites.h"
+	"OgreNode.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrenode.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreMatrix3.h"
+	"OgreMatrix4.h"
+	"OgreQuaternion.h"
+	"OgreString.h"
+	"OgreRenderable.h"
+	"OgreIteratorWrappers.h"
+	"OgreMesh.h"
+	"OgreUserObjectBindings.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremesh.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreVertexIndexData.h"
+	"OgreAxisAlignedBox.h"
+	"OgreVertexBoneAssignment.h"
+	"OgreIteratorWrappers.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreSkeleton.h"
+	"OgreAnimation.h"
+	"OgreAnimationTrack.h"
+	"OgrePose.h"
+	"OgreDataStream.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrevertexboneassignment.h
+	"OgrePrerequisites.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreskeleton.h
+	"OgrePrerequisites.h"
+	"OgreResource.h"
+	"OgreQuaternion.h"
+	"OgreVector3.h"
+	"OgreIteratorWrappers.h"
+	"OgreStringVector.h"
+	"OgreAnimation.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecamera.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreMovableObject.h"
+	"OgreMatrix4.h"
+	"OgreVector3.h"
+	"OgrePlane.h"
+	"OgreQuaternion.h"
+	"OgreCommon.h"
+	"OgreFrustum.h"
+	"OgreRay.h"
+	"OgrePlaneBoundedVolume.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreray.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgrePlaneBoundedVolume.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreplaneboundedvolume.h
+	"OgrePrerequisites.h"
+	"OgreAxisAlignedBox.h"
+	"OgreSphere.h"
+	"OgreMath.h"
+	"OgrePlane.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreconfigfile.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreStringVector.h"
+	"OgreIteratorWrappers.h"
+	"OgreDataStream.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecontrollermanager.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreSingleton.h"
+	"OgreController.h"
+	"OgrePredefinedControllers.h"
+	"OgreTextureUnitState.h"
+	"OgreSharedPtr.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepredefinedcontrollers.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreController.h"
+	"OgreFrameListener.h"
+	"OgreGpuProgram.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508967 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogretextureunitstate.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreBlendMode.h"
+	"OgreMatrix4.h"
+	"OgreIteratorWrappers.h"
+	"OgreString.h"
+	"OgreTexture.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreentity.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreString.h"
+	"OgreMovableObject.h"
+	"OgreQuaternion.h"
+	"OgreVector3.h"
+	"OgreHardwareBufferManager.h"
+	"OgreMesh.h"
+	"OgreRenderable.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwarebuffermanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreHardwareCounterBuffer.h"
+	"OgreHardwareIndexBuffer.h"
+	"OgreHardwareUniformBuffer.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreRenderToVertexBuffer.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwarecounterbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+	"OgreGpuProgramParams.h"
+	"OgreAny.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwareuniformbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+	"OgreGpuProgramParams.h"
+	"OgreAny.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerendertovertexbuffer.h
+	"OgrePrerequisites.h"
+	"OgreMaterial.h"
+	"OgreRenderOperation.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogregpuprogrammanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreException.h"
+	"OgreGpuProgram.h"
+	"OgreSingleton.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwarepixelbuffer.h
+	"OgrePrerequisites.h"
+	"OgreHardwareBuffer.h"
+	"OgreSharedPtr.h"
+	"OgrePixelFormat.h"
+	"OgreImage.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehardwareocclusionquery.h
+	"OgrePrerequisites.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehighlevelgpuprogram.h
+	"OgrePrerequisites.h"
+	"OgreGpuProgram.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrehighlevelgpuprogrammanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+	"OgreException.h"
+	"OgreHighLevelGpuProgram.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508959 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreinstancebatch.h
+	"OgrePrerequisites.h"
+	"OgreRenderOperation.h"
+	"OgreRenderable.h"
+	"OgreMovableObject.h"
+	"OgreMesh.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508960 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreinstancedentity.h
+	"OgreMovableObject.h"
+	"OgreNode.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508960 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreinstancemanager.h
+	"OgrePrerequisites.h"
+	"OgreMesh.h"
+	"OgreRenderOperation.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrelight.h
+	"OgrePrerequisites.h"
+	"OgreColourValue.h"
+	"OgreVector3.h"
+	"OgreVector4.h"
+	"OgreString.h"
+	"OgreMovableObject.h"
+	"OgrePlaneBoundedVolume.h"
+	"OgreShadowCameraSetup.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderPrefix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowcamerasetup.h
+	"OgrePrerequisites.h"
+	"OgreMovablePlane.h"
+	"OgreSharedPtr.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrelogmanager.h
+	"OgrePrerequisites.h"
+	"OgreLog.h"
+	"OgreSingleton.h"
+	"OgreString.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrelog.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreHeaderPrefix.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremanualobject.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrematerialmanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreResourceManager.h"
+	"OgreMaterial.h"
+	"OgreStringVector.h"
+	"OgreMaterialSerializer.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrematerialserializer.h
+	"OgrePrerequisites.h"
+	"OgreMaterial.h"
+	"OgreBlendMode.h"
+	"OgreTextureUnitState.h"
+	"OgreGpuProgram.h"
+	"OgreStringVector.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremeshmanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+	"OgreVector3.h"
+	"OgreHardwareBuffer.h"
+	"OgreMesh.h"
+	"OgrePatchMesh.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepatchmesh.h
+	"OgrePrerequisites.h"
+	"OgreMesh.h"
+	"OgrePatchSurface.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepatchsurface.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreString.h"
+	"OgreRenderOperation.h"
+	"OgreAxisAlignedBox.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508962 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremeshserializer.h
+	"OgrePrerequisites.h"
+	"OgreSerializer.h"
+	"OgreMeshSerializerImpl.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogremeshserializerimpl.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSerializer.h"
+	"OgreMaterial.h"
+	"OgreMesh.h"
+	"OgreEdgeListBuilder.h"
+
+1437508958 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreedgelistbuilder.h
+	"OgrePrerequisites.h"
+	"OgreVector4.h"
+	"OgreHardwareVertexBuffer.h"
+	"OgreRenderOperation.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticleaffector.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreStringInterface.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticleemitter.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreVector3.h"
+	"OgreColourValue.h"
+	"OgreStringInterface.h"
+	"OgreParticleEmitterCommands.h"
+	"OgreParticle.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticleemittercommands.h
+	"OgrePrerequisites.h"
+	"OgreStringInterface.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticle.h
+	"OgrePrerequisites.h"
+	"OgreBillboard.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508956 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrebillboard.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreColourValue.h"
+	"OgreCommon.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticlesystemmanager.h
+	"OgrePrerequisites.h"
+	"OgreParticleSystem.h"
+	"OgreFrameListener.h"
+	"OgreSingleton.h"
+	"OgreIteratorWrappers.h"
+	"OgreScriptLoader.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticlesystem.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreString.h"
+	"OgreParticleIterator.h"
+	"OgreStringInterface.h"
+	"OgreMovableObject.h"
+	"OgreRadixSort.h"
+	"OgreController.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreparticleiterator.h
+	"OgrePrerequisites.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepass.h
+	"OgrePrerequisites.h"
+	"OgreGpuProgram.h"
+	"OgreColourValue.h"
+	"OgreBlendMode.h"
+	"OgreCommon.h"
+	"OgreLight.h"
+	"OgreTextureUnitState.h"
+	"OgreUserObjectBindings.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreprofiler.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreString.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderqueueinvocation.h
+	"OgrePrerequisites.h"
+	"OgreRenderQueueSortingGrouping.h"
+	"OgreIteratorWrappers.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderqueuesortinggrouping.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreMaterial.h"
+	"OgreTechnique.h"
+	"OgrePass.h"
+	"OgreRadixSort.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogretechnique.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreBlendMode.h"
+	"OgreCommon.h"
+	"OgrePass.h"
+	"OgreIteratorWrappers.h"
+	"OgreRenderSystemCapabilities.h"
+	"OgreUserObjectBindings.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerendersystemcapabilities.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreStringConverter.h"
+	"OgreStringVector.h"
+	"OgreResource.h"
+	"OgreLogManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrestringconverter.h
+	"OgrePrerequisites.h"
+	"OgreStringVector.h"
+	"OgreColourValue.h"
+	"OgreMath.h"
+	"OgreMatrix3.h"
+	"OgreMatrix4.h"
+	"OgreQuaternion.h"
+	"OgreVector2.h"
+	"OgreVector3.h"
+	"OgreVector4.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderqueuelistener.h
+	"OgrePrerequisites.h"
+	"OgreRenderQueue.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerenderobjectlistener.h
+	"OgrePrerequisites.h"
+	"OgreRenderable.h"
+	"OgrePass.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerendersystem.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreTextureUnitState.h"
+	"OgreCommon.h"
+	"OgreMaterialManager.h"
+	"OgreRenderOperation.h"
+	"OgreRenderSystemCapabilities.h"
+	"OgreRenderTarget.h"
+	"OgreRenderTexture.h"
+	"OgreFrameListener.h"
+	"OgreConfigOptionMap.h"
+	"OgreGpuProgram.h"
+	"OgrePlane.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerendertexture.h
+	"OgrePrerequisites.h"
+	"OgreRenderTarget.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreconfigoptionmap.h
+	"OgrePrerequisites.h"
+	"OgreStringVector.h"
+	"OgreString.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerendertargetlistener.h
+	"OgrePrerequisites.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreresourcebackgroundqueue.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreSingleton.h"
+	"OgreResource.h"
+	"OgreWorkQueue.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreworkqueue.h
+	"OgrePrerequisites.h"
+	"OgreAny.h"
+	"OgreSharedPtr.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreribbontrail.h
+	"OgrePrerequisites.h"
+	"OgreBillboardChain.h"
+	"OgreNode.h"
+	"OgreIteratorWrappers.h"
+	"OgreFrameListener.h"
+	"OgreControllerManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreroot.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgreString.h"
+	"OgreSceneManagerEnumerator.h"
+	"OgreResourceGroupManager.h"
+	"OgreLodStrategyManager.h"
+	"OgreWorkQueue.h"
+	"Android/OgreAndroidLogListener.h"
+	<exception>
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrescenemanagerenumerator.h
+	"OgrePrerequisites.h"
+	"OgreSceneManager.h"
+	"OgreSingleton.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrescenemanager.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreSceneNode.h"
+	"OgrePlane.h"
+	"OgreQuaternion.h"
+	"OgreColourValue.h"
+	"OgreCommon.h"
+	"OgreSceneQuery.h"
+	"OgreAutoParamDataSource.h"
+	"OgreAnimationState.h"
+	"OgreRenderQueue.h"
+	"OgreRenderQueueSortingGrouping.h"
+	"OgreRectangle2D.h"
+	"OgrePixelFormat.h"
+	"OgreResourceGroupManager.h"
+	"OgreTexture.h"
+	"OgreShadowCameraSetup.h"
+	"OgreShadowTextureManager.h"
+	"OgreCamera.h"
+	"OgreInstancedGeometry.h"
+	"OgreLodListener.h"
+	"OgreInstanceManager.h"
+	"OgreRenderSystem.h"
+	"OgreHeaderPrefix.h"
+	"OgreNameGenerator.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrescenenode.h
+	"OgrePrerequisites.h"
+	"OgreNode.h"
+	"OgreIteratorWrappers.h"
+	"OgreAxisAlignedBox.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrescenequery.h
+	"OgrePrerequisites.h"
+	"OgreAxisAlignedBox.h"
+	"OgreSphere.h"
+	"OgreRay.h"
+	"OgreRenderOperation.h"
+	"OgrePlaneBoundedVolume.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508955 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreautoparamdatasource.h
+	"OgrePrerequisites.h"
+	"OgreCommon.h"
+	"OgreMatrix4.h"
+	"OgreVector4.h"
+	"OgreLight.h"
+	"OgreColourValue.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrerectangle2d.h
+	"OgrePrerequisites.h"
+	"OgreSimpleRenderable.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresimplerenderable.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreAxisAlignedBox.h"
+	"OgreMaterial.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowtexturemanager.h
+	"OgrePrerequisites.h"
+	"OgreSingleton.h"
+	"OgrePixelFormat.h"
+	"OgreTexture.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508960 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreinstancedgeometry.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreSimpleRenderable.h"
+	"OgreSkeleton.h"
+	"OgreSkeletonInstance.h"
+	"OgreAnimationTrack.h"
+	"OgreBone.h"
+	"OgreIteratorWrappers.h"
+	"OgreMesh.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreskeletoninstance.h
+	"OgrePrerequisites.h"
+	"OgreSkeleton.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrelodlistener.h
+	"OgrePrerequisites.h"
+
+1437508963 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrenamegenerator.h
+	"OgreString.h"
+	<sstream>
+	"OgreHeaderPrefix.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrelodstrategymanager.h
+	"OgrePrerequisites.h"
+	"OgreLodStrategy.h"
+	"OgreSingleton.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508961 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrelodstrategy.h
+	"OgrePrerequisites.h"
+	"OgreMesh.h"
+	"OgreMovableObject.h"
+	"OgreCamera.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreskeletonmanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreSingleton.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreskeletonserializer.h
+	"OgrePrerequisites.h"
+	"OgreSkeleton.h"
+	"OgreSerializer.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrestaticgeometry.h
+	"OgrePrerequisites.h"
+	"OgreMovableObject.h"
+	"OgreRenderable.h"
+	"OgreMesh.h"
+	"OgreLodStrategy.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresubentity.h
+	"OgrePrerequisites.h"
+	"OgreString.h"
+	"OgreRenderable.h"
+	"OgreHardwareBufferManager.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508966 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogresubmesh.h
+	"OgrePrerequisites.h"
+	"OgreVertexIndexData.h"
+	"OgreMaterial.h"
+	"OgreRenderOperation.h"
+	"OgreVertexBoneAssignment.h"
+	"OgreAnimationTrack.h"
+	"OgreResourceGroupManager.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositor.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreResource.h"
+	"OgreTexture.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositormanager.h
+	"OgrePrerequisites.h"
+	"OgreResourceManager.h"
+	"OgreCompositor.h"
+	"OgreRectangle2D.h"
+	"OgreRenderSystem.h"
+	"OgreCompositionTechnique.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositiontechnique.h
+	"OgrePrerequisites.h"
+	"OgrePixelFormat.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositorchain.h
+	"OgrePrerequisites.h"
+	"OgreRenderTargetListener.h"
+	"OgreRenderQueueListener.h"
+	"OgreCompositorInstance.h"
+	"OgreCompositor.h"
+	"OgreViewport.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositorinstance.h
+	"OgrePrerequisites.h"
+	"OgreMaterialManager.h"
+	"OgreTexture.h"
+	"OgreRenderQueue.h"
+	"OgreCompositionTechnique.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositionpass.h
+	"OgrePrerequisites.h"
+	"OgreMaterial.h"
+	"OgreRenderSystem.h"
+	"OgreRenderQueue.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508957 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrecompositiontargetpass.h
+	"OgrePrerequisites.h"
+	"OgreIteratorWrappers.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508968 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrewindoweventutilities.h
+	"OgrePrerequisites.h"
+	"OgrePlatform.h"
+	"OgreCommon.h"
+	"OgreHeaderPrefix.h"
+	<windows.h>
+	<Carbon/Carbon.h>
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowcamerasetupfocused.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetup.h"
+	"OgrePolygon.h"
+	"OgreConvexBody.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508964 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogrepolygon.h
+	"OgrePrerequisites.h"
+	"OgreVector3.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508958 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreconvexbody.h
+	"OgrePrerequisites.h"
+	"OgrePolygon.h"
+	"Threading/OgreThreadHeaders.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowcamerasetuplispsm.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetupFocused.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowcamerasetupplaneoptimal.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetup.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+
+1437508965 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreshadowcamerasetuppssm.h
+	"OgrePrerequisites.h"
+	"OgreShadowCameraSetupLiSPSM.h"
+	"OgreHeaderPrefix.h"
+	"OgreHeaderSuffix.h"
+

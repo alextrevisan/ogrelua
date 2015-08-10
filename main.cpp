@@ -6,9 +6,11 @@ extern "C" {
 #include "LuaIntf/LuaIntf.h"
 
 #include <Ogre.h>
-#include <Terrain/OgreTerrain.h>
-#include <Terrain/OgreTerrainGroup.h>
+#include <OIS.h>
 #include "FrameListener.h"
+
+#include "InputManager.h"
+#include "KeyListener.h"
 
 extern "C"
 {
@@ -233,6 +235,33 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
                 .addFunction("getHeightAtWorldPosition",(float(Ogre::TerrainGroup::*)(const Ogre::Vector3&,Ogre::Terrain**))&Ogre::TerrainGroup::getHeightAtWorldPosition)
             .endClass()*/
 
-        .endModule();
+        .endModule()
+        .beginModule("OIS")
+            .beginClass<OIS::KeyEvent>("KeyEvent")
+                .addVariable("key", &OIS::KeyEvent::key)
+            .endClass()
+            .beginClass<OIS::KeyListener>("OISKeyListener")
+            .endClass()
+            .beginExtendClass<KeyListener, OIS::KeyListener>("KeyListener")
+                .addConstructor(LUA_ARGS())
+                .addFunction("setKeyPressedListener",&KeyListener::setKeyPressedListener)
+                .addFunction("setKeyReleasedListener",&KeyListener::setKeyReleasedListener)
+            .endClass()
+        .endModule()
+        .beginClass<InputManager>("InputManager")
+            .addStaticFunction("getSingletonPtr", &InputManager::getSingletonPtr)
+            .addFunction("initialise", &InputManager::initialise)
+            .addFunction("capture", &InputManager::capture)
+            .addFunction("addKeyListener", &InputManager::addKeyListener)
+            .addFunction("addMouseListener", &InputManager::addMouseListener)
+            .addFunction("addJoystickListener", &InputManager::addJoystickListener)
+            .addFunction("removeKeyListener", &InputManager::removeKeyListener)
+            .addFunction("removeMouseListener", &InputManager::removeMouseListener)
+            .addFunction("removeJoystickListener", &InputManager::removeJoystickListener)
+            .addFunction("removeAllListeners", &InputManager::removeAllListeners)
+            .addFunction("removeAllKeyListeners", &InputManager::removeAllKeyListeners)
+            .addFunction("removeAllMouseListeners", &InputManager::removeAllMouseListeners)
+            .addFunction("removeAllJoystickListeners", &InputManager::removeAllJoystickListeners)
+        .endClass();
     return 1;
 }

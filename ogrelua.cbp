@@ -44,12 +44,16 @@
 			<Add directory="$(LUA_HOME)/src" />
 		</Compiler>
 		<Linker>
-			<Add library="$(OGRE_HOME)/bin/release/OgreTerrain.dll" />
 			<Add library="$(OGRE_HOME)/lib/release/libOgreMain.dll.a" />
+			<Add library="../OgreSDK/lib/release/libOIS.dll.a" />
 			<Add library="$(LUA_HOME)/src/libluajit.a" />
 		</Linker>
 		<Unit filename="FrameListener.cpp" />
 		<Unit filename="FrameListener.h" />
+		<Unit filename="InputManager.cpp" />
+		<Unit filename="InputManager.h" />
+		<Unit filename="KeyListener.cpp" />
+		<Unit filename="KeyListener.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

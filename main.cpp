@@ -18,9 +18,9 @@ extern "C"
 }
 #define MAJOR "0"
 #define MINOR "1"
-#define PATCH "0"
+#define PATCH "1"
 #define MYNAME "ogrelua " MAJOR "." MINOR "." PATCH
-#define MYVERSION MYNAME " library for " LUA_VERSION " / Oct 2014"
+#define MYVERSION MYNAME " library for " LUA_VERSION " / Jan 2016"
 
 LUALIB_API int luaopen_ogrelua(lua_State *L)
 {

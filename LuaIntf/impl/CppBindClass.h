@@ -348,6 +348,7 @@ struct CppBindClassMetaMethod
 
 //--------------------------------------------------------------------------
 
+template <typename PARENT>
 class CppBindModule;
 
 class CppBindClassBase
@@ -410,7 +411,7 @@ protected:
 template <typename T, typename PARENT>
 class CppBindClass : public CppBindClassBase
 {
-    friend class CppBindModule;
+    template <typename PX> friend class CppBindModule;
     template <typename TX, typename PX> friend class CppBindClass;
 
 private:
@@ -445,14 +446,19 @@ private:
      * @param super_type_id the super class id
      * @return new or existing class
      */
-    static CppBindClass<T, PARENT> extend(LuaRef& parent_meta, const char* name, void* super_type_id)
+    template <typename SUPER>
+    static CppBindClass<T, PARENT> extend(LuaRef& parent_meta, const char* name)
     {
         LuaRef meta;
         if (buildMetaTable(meta, parent_meta, name,
-            CppSignature<T>::value(), CppClassSignature<T>::value(), CppConstSignature<T>::value(), super_type_id))
+            CppSignature<T>::value(), CppClassSignature<T>::value(), CppConstSignature<T>::value(), CppSignature<SUPER>::value()))
         {
             meta.rawget("___class").rawset("__gc", &CppBindClassDestructor<T, false>::call);
             meta.rawget("___const").rawset("__gc", &CppBindClassDestructor<T, true>::call);
+
+#if LUAINTF_AUTO_DOWNCAST
+            CppAutoDowncast::add<T, SUPER>(meta.state());
+#endif
         }
         return CppBindClass<T, PARENT>(meta);
     }
@@ -909,6 +915,36 @@ public:
     }
 
     /**
+     * Add or replace a meta function, meta function is static function attached to object.
+     * It is usually used to implement infix operator for the class, that the first operand may
+     * or may not be the object.
+     *
+     * If the first operand is always the object itself, it is better to use addFunction instead.
+     */
+    template <typename FN>
+    CppBindClass<T, PARENT>& addMetaFunction(const char* name, const FN& proc)
+    {
+        using CppProc = CppBindMethod<FN>;
+        setMemberFunction(name, LuaRef::createFunction(state(), &CppProc::call, CppProc::function(proc)), true);
+        return *this;
+    }
+
+    /**
+     * Add or replace a meta function, meta function is static function attached to object.
+     * It is usually used to implement infix operator for the class, that the first operand may
+     * or may not be the object.
+     *
+     * If the first operand is always the object itself, it is better to use addFunction instead.
+     */
+    template <typename FN, typename ARGS>
+    CppBindClass<T, PARENT>& addMetaFunction(const char* name, const FN& proc, ARGS)
+    {
+        using CppProc = CppBindMethod<FN, ARGS>;
+        setMemberFunction(name, LuaRef::createFunction(state(), &CppProc::call, CppProc::function(proc)), true);
+        return *this;
+    }
+
+    /**
      * Open a new or existing class for registrations.
      */
     template <typename SUB>
@@ -923,7 +959,7 @@ public:
     template <typename SUB, typename SUPER>
     CppBindClass<SUB, CppBindClass<T, PARENT>> beginExtendClass(const char* name)
     {
-        return CppBindClass<SUB, CppBindClass<T, PARENT>>::extend(m_meta, name, CppSignature<SUPER>::value());
+        return CppBindClass<SUB, CppBindClass<T, PARENT>>::template extend<SUPER>(m_meta, name);
     }
 
     /**

@@ -4,11 +4,6 @@ project (orelua)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/;${CMAKE_MODULE_PATH}")
 
-add_library(ogrelua SHARED main.cpp
-                       KeyListener.cpp
-                       InputManager.cpp
-                       FrameListener.cpp)
-
 include_directories(LuaIntf)
 
 ##############################################################
@@ -42,8 +37,19 @@ endif()
 
 include_directories(${OIS_INCLUDE_DIRS})
 
+add_library(ogrelua SHARED main.cpp
+                       KeyListener.cpp
+                       InputManager.cpp
+                       FrameListener.cpp)
+
 target_link_libraries(ogrelua ${OGRE_LIBRARIES} ${OIS_LIBRARIES} ${LUA_LIBRARIES})
 
 set_target_properties(ogrelua PROPERTIES PREFIX "")
+
+add_library(ogreluaoverlay SHARED ogreluaoverlay.cpp)
+
+target_link_libraries(ogreluaoverlay ${OGRE_LIBRARIES} ${OGRE_Overlay_LIBRARY} ${LUA_LIBRARIES})
+
+set_target_properties(ogreluaoverlay PROPERTIES PREFIX "")
 
 add_definitions(-std=c++11)

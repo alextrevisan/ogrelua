@@ -46,7 +46,7 @@
 		<Linker>
 			<Add library="$(OGRE_HOME)/lib/release/libOgreMain.dll.a" />
 			<Add library="../OgreSDK/lib/release/libOIS.dll.a" />
-			<Add library="$(LUA_HOME)/src/libluajit.a" />
+			<Add library="$(LUA_HOME)/src/liblua.dll.a" />
 		</Linker>
 		<Unit filename="FrameListener.cpp" />
 		<Unit filename="FrameListener.h" />

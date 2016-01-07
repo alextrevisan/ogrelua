@@ -2,19 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="InputManager.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="15813" topLine="228" />
+			<Cursor1 position="1062" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="FrameListener.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="191" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="KeyListener.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="425" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="KeyListener.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,5 +22,15 @@
 			<Cursor1 position="4348" topLine="39" />
 		</Cursor>
 	</File>
-	<EditorTabsLayout layout="09d28cf055c8da9900c5249e00000002=0;ogrelua:main.cpp,1;ogrelua:FrameListener.h,2;ogrelua:KeyListener.cpp,3;ogrelua:KeyListener.h,4;ogrelua:InputManager.cpp,*5;@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=692;besth=345;minw=692;minh=345;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=09d28cf055c8da9900c5249e00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="17266" topLine="239" />
+		</Cursor>
+	</File>
+	<File name="KeyListener.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="425" topLine="0" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="0a4627f0568d67e000003f9d00000002=0;ogrelua:main.cpp,1;ogrelua:FrameListener.h,2;ogrelua:KeyListener.cpp,3;ogrelua:KeyListener.h,4;ogrelua:InputManager.cpp,*5;@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=483;besth=274;minw=483;minh=274;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=0a4627f0568d67e000003f9d00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
 </CodeBlocks_layout_file>

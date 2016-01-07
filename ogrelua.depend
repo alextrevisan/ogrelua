@@ -619,7 +619,7 @@
 	<stdio.h>
 	"lua.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\luaintf.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\luaintf.h
 	"LuaContext.h"
 	"impl/CppArg.h"
 	"impl/CppInvoke.h"
@@ -632,17 +632,17 @@
 	"src/CppObject.cpp"
 	"src/CppFunction.cpp"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\luacontext.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\luacontext.h
 	"LuaRef.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\luaref.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\luaref.h
 	"LuaState.h"
 	<functional>
 	<tuple>
 	<memory>
 	"src/LuaRef.cpp"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\luastate.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\luastate.h
 	"LuaCompat.h"
 	<cassert>
 	<cstring>
@@ -654,7 +654,7 @@
 	"impl/LuaType.h"
 	"src/LuaState.cpp"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\luacompat.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\luacompat.h
 	"lualib.h"
 	"lauxlib.h"
 	<stdint.h>
@@ -663,45 +663,45 @@
 1431653400 d:\desenvolvimento\dependencies\luajit-2.0.4\src\lualib.h
 	"lua.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luacompat.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luacompat.cpp
 	"LuaIntf/LuaCompat.h"
 	<errno.h>
 	<string.h>
 	<limits.h>
 	<math.h>
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\luaexception.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\luaexception.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\luatype.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\luatype.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luastate.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luastate.cpp
 	"LuaIntf/LuaIntf.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luaref.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\luaref.cpp
 	"LuaIntf/LuaIntf.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cpparg.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cpparg.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppinvoke.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppinvoke.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppobject.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppobject.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppbindmodule.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppbindmodule.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppbindclass.h
+1452176520 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppbindclass.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppfunction.h
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\impl\cppfunction.h
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppbindmodule.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppbindmodule.cpp
 	"LuaIntf/LuaIntf.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppbindclass.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppbindclass.cpp
 	"LuaIntf/LuaIntf.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppobject.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppobject.cpp
 	"LuaIntf/LuaIntf.h"
 
-1432176684 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppfunction.cpp
+1451515832 d:\desenvolvimento\dependencies\ogrelua\luaintf\src\cppfunction.cpp
 	"LuaIntf/LuaIntf.h"
 
 1435062186 d:\desenvolvimento\dependencies\ogresdk\include\ois\ois.h
@@ -752,13 +752,12 @@
 1437512559 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreframelistener.h
 	"OgrePrerequisites.h"
 
-1452104968 source:d:\desenvolvimento\dependencies\ogrelua\main.cpp
+1452177026 source:d:\desenvolvimento\dependencies\ogrelua\main.cpp
 	<lua.h>
 	<lauxlib.h>
 	"LuaIntf/LuaIntf.h"
 	<Ogre.h>
 	<OIS.h>
-	<Overlay/OgreOverlayManager.h>
 	"FrameListener.h"
 	"InputManager.h"
 	"KeyListener.h"

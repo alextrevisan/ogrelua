@@ -34,6 +34,8 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .addConstant("ST_EXTERIOR_REAL_FAR",Ogre::ST_EXTERIOR_REAL_FAR)
             .addConstant("ST_INTERIOR",Ogre::ST_INTERIOR)
 
+            .addConstant("RSC_VERTEX_PROGRAM",Ogre::RSC_VERTEX_PROGRAM)
+
             .beginClass<Ogre::FrameListener>("OgreFrameListener")
             .endClass()
             .beginExtendClass<FrameListener, Ogre::FrameListener>("FrameListener")
@@ -262,6 +264,15 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .addFunction("removeAllKeyListeners", &InputManager::removeAllKeyListeners)
             .addFunction("removeAllMouseListeners", &InputManager::removeAllMouseListeners)
             .addFunction("removeAllJoystickListeners", &InputManager::removeAllJoystickListeners)
+        .endClass()
+        .beginClass<Ogre::GpuProgramManager>("GpuProgramManager")
+            .addStaticFunction("getSingleton", &Ogre::GpuProgramManager::getSingleton)
+            .addStaticFunction("getSingletonPtr", &Ogre::GpuProgramManager::getSingletonPtr)
+            .addFunction("isSyntaxSupported", &Ogre::GpuProgramManager::isSyntaxSupported)
+        .endClass()
+        .beginClass<Ogre::RenderSystemCapabilities>("RenderSystemCapabilities")
+            .addFunction("hasCapability", &Ogre::RenderSystemCapabilities::hasCapability)
         .endClass();
+
     return 1;
 }

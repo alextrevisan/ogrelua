@@ -418,7 +418,7 @@ private:
     explicit CppBindClass(const LuaRef& meta)
         : CppBindClassBase(meta)
         {}
-
+public:
     /**
      * Register a new class or add to an existing class registration.
      *
@@ -437,7 +437,7 @@ private:
         }
         return CppBindClass<T, PARENT>(meta);
     }
-
+private:
     /**
      * Derive a new class or add to an existing class registration.
      *

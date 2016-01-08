@@ -3,5 +3,6 @@
 	<Workspace title="Workspace">
 		<Project filename="ogreluaoverlay.cbp" />
 		<Project filename="ogrelua.cbp" />
+		<Project filename="../../example03/example03.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

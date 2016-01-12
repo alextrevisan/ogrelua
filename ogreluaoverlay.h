@@ -15,17 +15,7 @@ extern "C" {
 #include <Overlay/OgreBorderPanelOverlayElement.h>
 #include <Overlay/OgreOverlaySystem.h>
 
-extern "C"
-{
-    LUALIB_API int luaopen_ogreluaoverlay(lua_State *L);
-}
-#define MAJOR "0"
-#define MINOR "1"
-#define PATCH "1"
-#define MYNAME "ogreluaoverlay " MAJOR "." MINOR "." PATCH
-#define MYVERSION MYNAME " library for " LUA_VERSION " / Jan 2016"
-
-LUALIB_API int luaopen_ogreluaoverlay(lua_State *L)
+void register_overlay(lua_State *L)
 {
     using namespace LuaIntf;
 
@@ -36,6 +26,9 @@ LUALIB_API int luaopen_ogreluaoverlay(lua_State *L)
             .addConstant("GMM_RELATIVE_ASPECT_ADJUSTED", Ogre::GMM_RELATIVE_ASPECT_ADJUSTED)
             .beginClass<Ogre::DisplayString>("DisplayString")
                 .addConstructor(LUA_ARGS(const std::string&))
+            .endClass()
+            .beginClass<Ogre::ColourValue>("ColourValue")
+                //.addConstructor(LUA_ARGS(float,float,float,float))
             .endClass()
             .beginClass<Ogre::Font>("Font")
                 .addFunction("getGlyphAspectRatio", &Ogre::Font::getGlyphAspectRatio)
@@ -104,5 +97,4 @@ LUALIB_API int luaopen_ogreluaoverlay(lua_State *L)
             .beginClass<Ogre::OverlaySystem>("OverlaySystem")
                 .addConstructor(LUA_ARGS(void))
             .endClass();
-    return 1;
 }

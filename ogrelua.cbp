@@ -44,6 +44,7 @@
 			<Add directory="$(LUA_HOME)/src" />
 		</Compiler>
 		<Linker>
+			<Add library="$(OGRE_HOME)/lib/release/libOgreOverlay.dll.a" />
 			<Add library="$(OGRE_HOME)/lib/release/libOgreMain.dll.a" />
 			<Add library="../OgreSDK/lib/release/libOIS.dll.a" />
 			<Add library="$(LUA_HOME)/src/liblua.dll.a" />

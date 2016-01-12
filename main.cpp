@@ -12,6 +12,8 @@ extern "C" {
 #include "InputManager.h"
 #include "KeyListener.h"
 
+#include "ogreluaoverlay.h"
+
 extern "C"
 {
     LUALIB_API int luaopen_ogrelua(lua_State *L);
@@ -274,5 +276,6 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .addFunction("hasCapability", &Ogre::RenderSystemCapabilities::hasCapability)
         .endClass();
 
+    register_overlay(L);
     return 1;
 }

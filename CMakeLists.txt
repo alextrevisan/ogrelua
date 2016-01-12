@@ -42,14 +42,8 @@ add_library(ogrelua SHARED main.cpp
                        InputManager.cpp
                        FrameListener.cpp)
 
-target_link_libraries(ogrelua ${OGRE_LIBRARIES} ${OIS_LIBRARIES} ${LUA_LIBRARIES})
+target_link_libraries(ogrelua ${OGRE_LIBRARIES} ${OIS_LIBRARIES} ${OGRE_Overlay_LIBRARY} ${LUA_LIBRARIES})
 
 set_target_properties(ogrelua PROPERTIES PREFIX "")
-
-add_library(ogreluaoverlay SHARED ogreluaoverlay.cpp)
-
-target_link_libraries(ogreluaoverlay ${OGRE_LIBRARIES} ${OGRE_Overlay_LIBRARY} ${LUA_LIBRARIES})
-
-set_target_properties(ogreluaoverlay PROPERTIES PREFIX "")
 
 add_definitions(-std=c++11)

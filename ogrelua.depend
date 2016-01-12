@@ -752,7 +752,7 @@
 1437512559 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreframelistener.h
 	"OgrePrerequisites.h"
 
-1452177026 source:d:\desenvolvimento\dependencies\ogrelua\main.cpp
+1452632090 source:d:\desenvolvimento\dependencies\ogrelua\main.cpp
 	<lua.h>
 	<lauxlib.h>
 	"LuaIntf/LuaIntf.h"
@@ -761,6 +761,7 @@
 	"FrameListener.h"
 	"InputManager.h"
 	"KeyListener.h"
+	"ogreluaoverlay.h"
 
 1437512554 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogre.h
 	"OgrePrerequisites.h"
@@ -1798,4 +1799,91 @@
 	"OgreSceneNode.h"
 	"OgreIteratorWrappers.h"
 	"OgreMatrix4.h"
+
+1452631981 d:\desenvolvimento\dependencies\ogrelua\ogreluaoverlay.h
+	<lua.h>
+	<lauxlib.h>
+	"LuaIntf/LuaIntf.h"
+	<Ogre.h>
+	<Overlay/OgreOverlayManager.h>
+	<Overlay/OgreOverlayElement.h>
+	<Overlay/OgreOverlayContainer.h>
+	<Overlay/OgreTextAreaOverlayElement.h>
+	<Overlay/OgreFont.h>
+	<Overlay/OgreFontManager.h>
+	<Overlay/OgreBorderPanelOverlayElement.h>
+	<Overlay/OgreOverlaySystem.h>
+
+1452516498 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreoverlayelement.h
+	"OgreOverlayPrerequisites.h"
+	"OgreString.h"
+	"OgreRenderable.h"
+	"OgreUTFString.h"
+	"OgreStringInterface.h"
+	"OgreOverlayElementCommands.h"
+	"OgreColourValue.h"
+
+1437512567 d:\desenvolvimento\dependencies\ogresdk\include\ogre\ogreutfstring.h
+	"OgrePrerequisites.h"
+	"OgreHeaderPrefix.h"
+	<iterator>
+	<string>
+	<stdexcept>
+	"OgreHeaderSuffix.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreoverlayelementcommands.h
+	"OgreOverlayPrerequisites.h"
+	"OgreStringInterface.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreoverlaycontainer.h
+	"OgreOverlayPrerequisites.h"
+	"OgreOverlayElement.h"
+	"OgreIteratorWrappers.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogretextareaoverlayelement.h
+	"OgreOverlayElement.h"
+	"OgreFont.h"
+
+1437512528 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogrefont.h
+	"OgreOverlayPrerequisites.h"
+	"OgreResource.h"
+	"OgreTexture.h"
+	"OgreMaterial.h"
+	"OgreCommon.h"
+
+1437512528 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogrefontmanager.h
+	"OgreOverlayPrerequisites.h"
+	"OgreSingleton.h"
+	"OgreResourceManager.h"
+	"OgreFont.h"
+
+1437512528 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreborderpaneloverlayelement.h
+	"OgrePanelOverlayElement.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogrepaneloverlayelement.h
+	"OgreOverlayContainer.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreoverlaysystem.h
+	"OgreOverlay.h"
+	"OgreOverlayContainer.h"
+	"OgreOverlayElement.h"
+	"OgreOverlayManager.h"
+	"OgreFontManager.h"
+	"OgreBorderPanelOverlayElement.h"
+	"OgreTextAreaOverlayElement.h"
+	"OgreOverlayElementFactory.h"
+	"OgreRenderQueueListener.h"
+	"OgreOverlayProfileSessionListener.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreoverlayelementfactory.h
+	"OgreOverlayPrerequisites.h"
+	"OgreOverlayElement.h"
+	"OgrePanelOverlayElement.h"
+	"OgreBorderPanelOverlayElement.h"
+	"OgreTextAreaOverlayElement.h"
+
+1437512529 d:\desenvolvimento\dependencies\ogresdk\include\ogre\overlay\ogreoverlayprofilesessionlistener.h
+	"OgreOverlayPrerequisites.h"
+	"OgreProfiler.h"
+	"OgreOverlay.h"
 

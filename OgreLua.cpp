@@ -12,7 +12,7 @@ extern "C" {
 #include "InputManager.h"
 #include "KeyListener.h"
 
-#include "ogreluaoverlay.h"
+#include "OgreLuaOverlay.h"
 
 extern "C"
 {
@@ -161,6 +161,8 @@ LUALIB_API int luaopen_ogrelua(lua_State *L)
             .beginClass<Ogre::SceneManager>("SceneManager")
                 .addFunction("createCamera",&Ogre::SceneManager::createCamera)
                 .addFunction("getRootSceneNode",&Ogre::SceneManager::getRootSceneNode)
+                .addFunction("addRenderQueueListener",&Ogre::SceneManager::addRenderQueueListener)
+                .addFunction("removeRenderQueueListener",&Ogre::SceneManager::removeRenderQueueListener)
                 .addFunction("createEntity",(Ogre::Entity*(Ogre::SceneManager::*)(const Ogre::String&,const Ogre::String&,const Ogre::String&))&Ogre::SceneManager::createEntity)
                 .addFunction("setAmbientLight",(void(Ogre::SceneManager::*)(Ogre::ColourValue*))&Ogre::SceneManager::setAmbientLight)
                 .addFunction("getAmbientLight",&Ogre::SceneManager::getAmbientLight)

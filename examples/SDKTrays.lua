@@ -258,24 +258,22 @@ function createButton(trayLoc, name, caption, width)
     b = Button.create(name, caption, width);
     --moveWidgetToTray(b, trayLoc);
     --b->_assignListener(mListener);
-    return b;
+    return b
 end
 
-return Button
 --[[
 virtual ~Button() {}
+--]]
+function Button:getCaption()
+    return self.mTextArea:getCaption()
+end
 
-const Ogre::DisplayString& getCaption()
-{
-    return mTextArea->getCaption();
-}
-
-void setCaption(const Ogre::DisplayString& caption)
-{
-    mTextArea->setCaption(caption);
-    if (mFitToContents) mElement->setWidth(getCaptionWidth(caption, mTextArea) + mElement->getHeight() - 12);
-}
-
+function Button:setCaption(caption)
+    self.mTextArea:setCaption(caption)
+    if (self.mFitToContents) mElement:setWidth(self.getCaptionWidth(self.caption, self.mTextArea) + mElement:getHeight() - 12);
+end
+return Button
+--[[
 const ButtonState& getState() { return mState; }
 
 void _cursorPressed(const Ogre::Vector2& cursorPos)

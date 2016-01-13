@@ -93,8 +93,11 @@ void register_overlay(lua_State *L)
                 .addFunction("getViewportWidth", &Ogre::OverlayManager::getViewportWidth)
                 .addFunction("createOverlayElementFromTemplate", &Ogre::OverlayManager::createOverlayElementFromTemplate)
                 .addFunction("createOverlayElement", &Ogre::OverlayManager::createOverlayElement)
+                .addFunction("create", &Ogre::OverlayManager::create)
             .endClass()
-            .beginClass<Ogre::OverlaySystem>("OverlaySystem")
+            .beginClass<Ogre::RenderQueueListener>("RenderQueueListener")
+            .endClass()
+            .beginExtendClass<Ogre::OverlaySystem,Ogre::RenderQueueListener>("OverlaySystem")
                 .addConstructor(LUA_ARGS(void))
             .endClass();
 }

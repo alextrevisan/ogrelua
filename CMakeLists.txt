@@ -37,7 +37,7 @@ endif()
 
 include_directories(${OIS_INCLUDE_DIRS})
 
-add_library(ogrelua SHARED main.cpp
+add_library(ogrelua SHARED OgreLua.cpp
                        KeyListener.cpp
                        InputManager.cpp
                        FrameListener.cpp)

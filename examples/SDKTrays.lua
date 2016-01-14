@@ -1,5 +1,32 @@
-require('ogreluaoverlay')
-local function inheritsFrom( baseClass )
+--[[
+ -----------------------------------------------------------------------------
+ This source file is part of OGRE
+ (Object-oriented Graphics Rendering Engine)
+ For the latest info, see http://www.ogre3d.org/
+ 
+ Copyright (c) 2000-2013 Torus Knot Software Ltd
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ -----------------------------------------------------------------------------
+ --]]
+require('ogrelua')
+local function class( baseClass )
     local new_class = {}
     local class_mt = { __index = new_class }
     function new_class:create()
@@ -15,6 +42,8 @@ end
 
 function DISPLAY_STRING_TO_STRING(DS) return DS end
 
+local OgreBites = {}
+
 --TrayLocation = enumerator values for widget tray anchoring locations
 local TL_TOPLEFT = 1
 local TL_TOP = 2
@@ -26,7 +55,6 @@ local TL_BOTTOMLEFT = 7
 local TL_BOTTOM = 8
 local TL_BOTTOMRIGHT = 9
 local TL_NONE = 10
-
 
 --ButtonState =  enumerator values for button states
 local BS_UP = 1
@@ -46,13 +74,7 @@ local CheckBox
 | Listener class for responding to tray events.
 =============================================================================
 --]]
-SdkTrayListener = {}
-SdkTrayListener.__index = SdkTrayListener
-SdkTrayListener.create = function()
-    local instance = {}
-    setmetatable(instance,SdkTrayListener)
-    return instance
-end
+local SdkTrayListener = class(nil)
 
 function SdkTrayListener:buttonHit(button) end
 function SdkTrayListener:itemSelected(menu) end
@@ -61,20 +83,21 @@ function SdkTrayListener:sliderMoved(slider) end
 function SdkTrayListener:checkBoxToggled(box) end
 function SdkTrayListener:okDialogClosed(message) end
 function SdkTrayListener:yesNoDialogClosed(question, yesHit) end
+OgreBites.SdkTrayListener = SdkTrayListener
 
 --[[
 /*=============================================================================
 | Abstract base class for all widgets.
 =============================================================================*/
 --]]
-Widget = {}
-Widget.__index = Widget
-Widget.create = function()
-    local instance = {}
+local _Widget = class(nil)
+local Widget = {}
+local basecreate = Widget:create
+function Widget:create()
+    local instance = _Widget:create()
     instance.mTrayLoc = TL_NONE
     instance.mElement = 0
     instance.mListener = 0
-    setmetatable(instance,Widget)
     return instance
 end
 
@@ -110,11 +133,10 @@ function Widget.nukeOverlayElement(element)
     end
 end
 
---[[
-    /*-----------------------------------------------------------------------------
-    | Static utility method to check if the cursor is over an overlay element.
-    -----------------------------------------------------------------------------*/
---]]
+--[[-----------------------------------------------------------------------------
+| Static utility method to check if the cursor is over an overlay element.
+-------------------------------------------------------------------------------]]
+
 function Widget.isCursorOver(element, cursorPos, voidBorder)
     voidBorder = voidBorder or 0
     local om = Ogre.OverlayManager:getSingleton()
@@ -122,28 +144,24 @@ function Widget.isCursorOver(element, cursorPos, voidBorder)
     local t = element:_getDerivedTop() * om:getViewportHeight()
     local r = l + element:getWidth()
     local b = t + element:getHeight()
-
     return (cursorPos.x >= l + voidBorder and cursorPos.x <= r - voidBorder and
         cursorPos.y >= t + voidBorder and cursorPos.y <= b - voidBorder)
 end
 
---[[
-/*-----------------------------------------------------------------------------
+--[[-----------------------------------------------------------------------------
 | Static utility method used to get the cursor's offset from the center
 | of an overlay element in pixels.
------------------------------------------------------------------------------*/
---]]
+-------------------------------------------------------------------------------]]
 function Widget.cursorOffset(element, cursorPos)
-    local om = Ogre::OverlayManager::getSingleton()
+
+    local om = Ogre.OverlayManager:getSingleton()
     return Ogre.Vector2(cursorPos.x - (element:_getDerivedLeft() * om:getViewportWidth() + element:getWidth() / 2),
         cursorPos.y - (element:_getDerivedTop() * om:getViewportHeight() + element:getHeight() / 2));
 end
 
---[[
-/*-----------------------------------------------------------------------------
+--[[-----------------------------------------------------------------------------
 | Static utility method used to get the width of a caption in a text area.
------------------------------------------------------------------------------*/
---]]
+-------------------------------------------------------------------------------]]
 function Widget.getCaptionWidth(caption, area)
     local font = Ogre.FontManager:getSingleton():getByName(area:getFontName()):getPointer()
     local current = DISPLAY_STRING_TO_STRING(caption)
@@ -228,18 +246,23 @@ end
 function Widget:_assignListener(listener)
     self.mListener = listener
 end
+
+OgreBites.Widget = Widget
+
 --[[
 /*=============================================================================
 | Basic button class.
 =============================================================================*/
 --]]
 
-Button = inheritsFrom(Widget)
+Button = class(Widget)
+local basecreate = Button:create
 -- Do not instantiate any widgets directly. Use SdkTrayManager.
-function Button.create(name, caption, width)
+function Button:create(name, caption, width)
+    basecreate()
     self.mElement = Ogre.OverlayManager:getSingleton():createOverlayElementFromTemplate("SdkTrays/Button", "BorderPanel", name);
-    self.mBP = mElement;
-    self.mTextArea = mBP:getChild(mBP:getName() + "/ButtonCaption");
+    self.mBP = self.mElement;
+    self.mTextArea = mBP:getChild(mBP:getName() .. "/ButtonCaption");
     self.mTextArea:setTop(-(mTextArea:getCharHeight() / 2));
 
     if width > 0 then
@@ -255,87 +278,65 @@ end
 
 function createButton(trayLoc, name, caption, width)
     width = width or 0
-    b = Button.create(name, caption, width);
+    b = Button:create(name, caption, width);
     --moveWidgetToTray(b, trayLoc);
     --b->_assignListener(mListener);
     return b
 end
 
---[[
-virtual ~Button() {}
---]]
 function Button:getCaption()
     return self.mTextArea:getCaption()
 end
 
 function Button:setCaption(caption)
     self.mTextArea:setCaption(caption)
-    if (self.mFitToContents) mElement:setWidth(self.getCaptionWidth(self.caption, self.mTextArea) + mElement:getHeight() - 12);
+    if (self.mFitToContents) then mElement:setWidth(self.getCaptionWidth(self.caption, self.mTextArea) + mElement:getHeight() - 12) end
 end
-return Button
+
+function Button:getState()  return self.mState end
+
+function Button:_cursorPressed(cursorPos)
+    if (self:isCursorOver(self.mElement, self.cursorPos, 4)) then
+        self:setState(BS_DOWN)
+    end
+end
+
+function Button:_cursorReleased(cursorPos)
+    if (self.mState == BS_DOWN) then
+        self:setState(BS_OVER)
+        if (mListener) then mListener:buttonHit(self) end
+    end
+end
+
+function Button:_cursorMoved(cursorPos)
+    if self:isCursorOver(self.mElement, cursorPos, 4) then
+        if (mState == BS_UP) then setState(BS_OVER) end
+    else
+        if (mState ~= BS_UP) then setState(BS_UP) end
+    end
+end
+
+function Button:_focusLost()
+    self:setState(BS_UP);   -- reset button if cursor was lost
+end
+
+function Button:setState(bs)
+    if (bs == BS_OVER) then
+        mBP:setBorderMaterialName("SdkTrays/Button/Over")
+        mBP:setMaterialName("SdkTrays/Button/Over")
+    elseif (bs == BS_UP) then
+        mBP:setBorderMaterialName("SdkTrays/Button/Up")
+        mBP:setMaterialName("SdkTrays/Button/Up")
+    else
+        mBP:setBorderMaterialName("SdkTrays/Button/Down")
+        mBP:setMaterialName("SdkTrays/Button/Down")
+    end
+
+    self.mState = bs
+end
+OgreBites.Button = Button
+return OgreBites
 --[[
-const ButtonState& getState() { return mState; }
-
-void _cursorPressed(const Ogre::Vector2& cursorPos)
-{
-    if (isCursorOver(mElement, cursorPos, 4)) setState(BS_DOWN);
-}
-
-void _cursorReleased(const Ogre::Vector2& cursorPos)
-{
-    if (mState == BS_DOWN)
-    {
-        setState(BS_OVER);
-        if (mListener) mListener->buttonHit(this);
-    }
-}
-
-void _cursorMoved(const Ogre::Vector2& cursorPos)
-{
-    if (isCursorOver(mElement, cursorPos, 4))
-    {
-        if (mState == BS_UP) setState(BS_OVER);
-    }
-    else
-    {
-        if (mState != BS_UP) setState(BS_UP);
-    }
-}
-
-void _focusLost()
-{
-    setState(BS_UP);   // reset button if cursor was lost
-}
-
-protected:
-
-void setState(const ButtonState& bs)
-{
-    if (bs == BS_OVER)
-    {
-        mBP->setBorderMaterialName("SdkTrays/Button/Over");
-        mBP->setMaterialName("SdkTrays/Button/Over");
-    }
-    else if (bs == BS_UP)
-    {
-        mBP->setBorderMaterialName("SdkTrays/Button/Up");
-        mBP->setMaterialName("SdkTrays/Button/Up");
-    }
-    else
-    {
-        mBP->setBorderMaterialName("SdkTrays/Button/Down");
-        mBP->setMaterialName("SdkTrays/Button/Down");
-    }
-
-    mState = bs;
-}
-
-ButtonState mState;
-Ogre::BorderPanelOverlayElement* mBP;
-Ogre::TextAreaOverlayElement* mTextArea;
-bool mFitToContents;
-};  
-
 /*=============================================================================
 | Scrollable text box widget.
 =============================================================================*/

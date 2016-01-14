@@ -55,7 +55,8 @@
 		<Unit filename="InputManager.h" />
 		<Unit filename="KeyListener.cpp" />
 		<Unit filename="KeyListener.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="OgreLua.cpp" />
+		<Unit filename="OgreLuaOverlay.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
